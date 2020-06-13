@@ -1,0 +1,27 @@
+;.editorconfig
+; for js-beautify
+
+root = true
+
+[**.js]
+indent_style = tab
+indent_size = 3
+
+[**.json]
+indent_style = tab
+indent_size = 3
+
+[**.jsx]
+e4x = true
+indent_style = tab
+indent_size = 3
+
+[**.css]
+indent_style = tab
+indent_size = 3
+
+[**.html]
+indent_style = tab
+indent_size = 3
+max_char = 78
+brace_style = expand

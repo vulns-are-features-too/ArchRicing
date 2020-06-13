@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# This prompts a power menu for shutdown, reboot, etc.
+
+choice=$(echo -e "\
+0) Do nothing\n\
+1) Lock screen\n\
+2) Shutdown\n\
+3) Restart\n\
+4) Log out\n\
+5) Kill graphical\n\
+6) Suspend\n\
+7) Halt\
+" | dmenu -i -l 10 | cut -c 1)
+
+case $choice in
+	1) $SCREENLOCK;;
+	2) shutdown -P now;;
+	3) shutdown -r now;;
+	4) logout;;
+	5) bspc quit;;
+	6) suspend;;
+	7) halt;;
+esac

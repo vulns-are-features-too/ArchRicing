@@ -1,0 +1,11 @@
+Cython
+matplotlib
+numpy
+pwntools
+pylint
+requests
+scapy
+scipy
+scrapy
+shodan
+stegoveritas

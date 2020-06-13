@@ -1,0 +1,3 @@
+bkimminich/juice-shop
+remnux/cyberchef
+dizcza/docker-hashcat:latest
