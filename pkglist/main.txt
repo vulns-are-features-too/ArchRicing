@@ -1,5 +1,8 @@
 airgeddon
 arachni
+arduino
+arduino-avr-core
+arduino-cli
 armitage
 arpoison
 asleap
@@ -40,6 +43,7 @@ fcrackzip
 fierce
 fimap
 finalrecon
+flashrom
 fluxion
 foremost
 ghidra
@@ -59,6 +63,7 @@ jexboss
 john
 kismet
 leviathan
+lib32-gcc-libs
 lighttpd
 linux-exploit-suggester
 lsof
@@ -72,6 +77,7 @@ metagoofil
 metasploit
 metasploit-autopwn
 mimikatz
+minicom
 mitmproxy
 moreutils
 msf-mpc
@@ -83,9 +89,12 @@ netsniff-ng
 nikto
 nmap
 nvcc
+openocd
 openstego
 owasp-bywaf
 owasp-zsc
+pandoc
+pandoc-crossref
 pdfcrack
 perl-image-exiftool
 pixiewps
@@ -93,6 +102,10 @@ pompem
 powersploit
 pret
 proxychains-ng
+pulseaudio
+pulseaudio-alsa
+pulseaudio-bluetooth
+pulsemixer
 pyrit
 pycuda-headers
 python-pycuda
