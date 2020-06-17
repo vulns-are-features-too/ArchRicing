@@ -5,7 +5,7 @@ source var.sh
 
 echo -e "[START] Installing and setting up stuff for Vim\n"
 
-mkdir -p $path_to_vim/autoload $path_to_vim/bundle $path_to_vim/colors $path_to_vim/plugged
+mkdir -p $path_to_vim/autoload $path_to_vim/plugged
 
 # Install stuff with package manager
 sudo pacman -S --needed --noconfirm vim-runtime
@@ -25,6 +25,7 @@ vim --cmd ":source $path_to_vim/init.vim" \
 # vim-jsbeautify
 cp ./.editorconfig $path_to_vim/
 
+# sym-link vim to nvim
 ln -s $HOME/.config/nvim/init.vim $HOME/.vimrc
 ln -s $HOME/.config/nvim/ $HOME/.vim
 sudo ln -s /usr/bin/nvim /usr/bin/vim

@@ -1,9 +1,9 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
 
 set -e
 source var.sh
 
 # Install peda
-path_to_peda="$path_to_pentest/peda"
+path_to_peda="$path_to_tools/peda"
 git clone https://github.com/longld/peda.git $path_to_peda
-echo "source $path_to_peda/peda.py" >> ~/.gdbinit
+#echo "source $path_to_peda/peda.py" >> ~/.gdbinit
