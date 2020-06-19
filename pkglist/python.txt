@@ -1,9 +1,15 @@
+bandit
 Cython
 matplotlib
+mypy
 numpy
+pipenv
 pwntools
 pylint
+pyre-check
+pytest
 requests
+safety
 scapy
 scipy
 scrapy

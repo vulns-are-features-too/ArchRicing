@@ -20,6 +20,7 @@ burpsuite
 cewl
 checksec
 commix
+conntrack-tools
 crackmapexec
 crunch
 csrftester
@@ -66,6 +67,7 @@ leviathan
 lib32-gcc-libs
 lighttpd
 linux-exploit-suggester
+lshw
 lsof
 ltrace
 macchanger
