@@ -1,4 +1,2 @@
 https://github.com/ChocolateOverflow/st
 https://github.com/ChocolateOverflow/dmenu
-https://github.com/ChocolateOverflow/slock
-https://git.suckless.org/slstatus

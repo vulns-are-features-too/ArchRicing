@@ -145,6 +145,14 @@ misc(){
 
 	# allow acpilight's xbacklight to control brightness without sudo
 	sudo cp ./misc/90-backlight.rules /etc/udev/rules.d/
+
+	# Setup dbus for notify-send with cron
+	mkdir $HOME/.dbus/
+	touch $HOME/.dbus/Xdbus
+	chmod 600 $HOME/.dbus/Xdbus
+	env | grep DBUS_SESSION_BUS_ADDRESS > $HOME/.dbus/Xdbus
+	echo 'export DBUS_SESSION_BUS_ADDRESS' >> $HOME/.dbus/Xdbus
+
 }
 
 post_install(){
