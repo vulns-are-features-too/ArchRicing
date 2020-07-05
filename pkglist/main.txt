@@ -106,7 +106,6 @@ netsniff-ng
 newsboat
 nikto
 nmap
-nvcc
 openocd
 openstego
 openvas
@@ -184,10 +183,9 @@ xautomation
 xclip
 xdo
 xdotool
-xfreerdp
+freerdp
 xorg-font-util
 xorg-font-utils
-xorg-fonts-encoding
 xorg-server
 xorg-xbacklight
 xorg-xdpyinfo

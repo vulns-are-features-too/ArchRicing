@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+set -e
+
 ##############################
 # Options and Variables
 ##############################
@@ -184,17 +186,17 @@ post_install(){
 
 echo -e "Running install and setup\n"
 
-pre_install || (echo "Error at pre_install()"; exit)
-add_repos || (echo "Error at add_repos()"; exit)
-install_pkg || (echo "Error at install_pkg()"; exit)
-install_aur || (echo "Error at install_aur()"; exit)
-install_python || (echo "Error at install_python()"; exit)
-install_gitmake || (echo "Error at install_gitmake()"; exit)
-install_manual || (echo "Error at install_manual()"; exit)
-install_npm || (echo "Error at install_npm()"; exit)
-dotfiles || (echo "Error at dotfiles()"; exit)
-setup || (echo "Error at setup()"; exit)
-misc || (echo "Error at misc()"; exit)
-post_install || (echo "Error at post_install()"; exit)
+pre_install || echo "Error at pre_install()"
+add_repos || echo "Error at add_repos()"
+install_pkg || echo "Error at install_pkg()"
+install_aur || echo "Error at install_aur()"
+install_python || echo "Error at install_python()"
+install_gitmake || echo "Error at install_gitmake()"
+install_manual || echo "Error at install_manual()"
+install_npm || echo "Error at install_npm()"
+dotfiles || echo "Error at dotfiles()"
+setup || echo "Error at setup()"
+misc || echo "Error at misc()"
+post_install || echo "Error at post_install()"
 
 echo -e "Done with everything!\n"
