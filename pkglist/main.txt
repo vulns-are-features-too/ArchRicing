@@ -171,7 +171,6 @@ urlscan
 v3n0m
 valgrind
 virtualbox
-virtualbox-guest-utilsacpilight
 volatility
 volatility-extra
 w3af
