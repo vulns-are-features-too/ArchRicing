@@ -1,0 +1,3 @@
+#!/usr/bin/sh
+
+firejail --tracelog /usr/bin/virtualbox
