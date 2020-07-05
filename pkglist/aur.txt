@@ -2,4 +2,5 @@ cherrytree
 nessus
 screenkey
 task-spooler
+tldr++
 zsteg

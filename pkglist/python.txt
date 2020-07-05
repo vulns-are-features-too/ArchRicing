@@ -8,6 +8,7 @@ pwntools
 pylint
 pyre-check
 pytest
+pytype
 requests
 safety
 scapy
@@ -15,3 +16,4 @@ scipy
 scrapy
 shodan
 stegoveritas
+yapf

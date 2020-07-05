@@ -1,2 +1,1 @@
 https://github.com/ChocolateOverflow/st
-https://github.com/ChocolateOverflow/dmenu

@@ -1,8 +1,5 @@
 #!/usr/bin/bash
 
-set -e
-
-
 ##############################
 # Options and Variables
 ##############################
@@ -53,8 +50,7 @@ add_repos(){
 install_pkg(){
 	echo -e "[START] Installing with standard package manager\n"
 
-	echo -e "Installing main tools\n"
-	sudo pacman -Syu --noconfirm --needed $(cat $path_to_pkgs/main.txt | tr '\n' ' ')
+	sudo pacman -Syu --noconfirm --needed $(cat $path_to_pkgs/main.txt | tr '\n' ' ') || return -1
 
 	echo -e "[DONE] Installing with standard package manager\n"
 }
@@ -62,7 +58,7 @@ install_pkg(){
 install_aur(){
 	echo -e "[START] Installing stuff from the AUR\n"
 
-	yay -S $(cat $path_to_pkgs/aur.txt | tr '\n' ' ')
+	yay -S $(cat $path_to_pkgs/aur.txt | tr '\n' ' ') || return -1
 
 	echo -e "[DONE] Installing stuff from the AUR\n"
 }
@@ -70,7 +66,7 @@ install_aur(){
 install_python(){
 	echo -e "[START] Installing python modules\n"
 
-	pip3 install -r $path_to_pkgs/python.txt
+	pip3 install -r $path_to_pkgs/python.txt || return -1
 
 	echo -e "[DONE] Installing python modules\n"
 }
@@ -84,7 +80,7 @@ install_gitmake(){
 		cd $path_to_tools/$tmp
 		make
 		sudo make install
-	done < $path_to_pkgs/gitmake.txt
+	done < $path_to_pkgs/gitmake.txt || return -1
 	cd $path_current
 
 	echo -e "[DONE] Installing stuff from github with make\n"
@@ -96,9 +92,21 @@ install_manual(){
 	# Loop through /manual_install and run every script
 	for dir in ./manual_install/*; do
 		bash $dir/install.sh
-	done
+	done || return -1
 
+	echo -e "[DONE] Installing some tools semi-manually\n"
+}
+
+install_npm(){
 	echo -e "[START] Installing some tools semi-manually\n"
+
+	# Setup npm to be used without sudo
+	npm config set prefix ~/.npm
+	export PATH="$PATH:$HOME/.npm/bin"
+
+	npm install -g $(cat $path_to_pkgs/npm.txt | tr '\n' ' ') || return -1
+
+	echo -e "[DONE] Installing some tools semi-manually\n"
 }
 
 dotfiles(){
@@ -109,23 +117,14 @@ dotfiles(){
 	for line in $path_to_dotfiles/home/.*; do
 		target=$(echo $line | cut -d \/ -f 7)
 		[ $target != "." ] && [ $target != ".." ] && ln -sf $line $HOME/$target
-	done
+	done || return -1
 
 	for line in $path_to_dotfiles/config/*; do
 		target=$(echo $line | cut -d \/ -f 7)
 		ln -sf $line $HOME/.config/$target
-	done
+	done || return -1
 
 	echo -e "[DONE] Installing dot files\n"
-}
-
-cron(){
-	echo -e "[START] Copying cron jobs\n"
-
-#	cp ./cron/user/* $path_to_cron_user
-#	cp ./cron/root/* $path_to_cron_root
-
-	echo -e "[DONE] Copying cron jobs\n"
 }
 
 setup(){
@@ -134,7 +133,7 @@ setup(){
 	# Loop through /setup and run every script
 	for dir in ./setup/*; do
 		bash $dir/setup.sh
-	done
+	done || return -1
 
 	echo -e "[DONE] Setting up tools\n"
 }
@@ -185,17 +184,17 @@ post_install(){
 
 echo -e "Running install and setup\n"
 
-pre_install
-add_repos
-install_pkg
-install_aur
-install_python
-install_gitmake
-install_manual
-dotfiles
-cron
-setup
-misc
-post_install
+pre_install || (echo "Error at pre_install()"; exit)
+add_repos || (echo "Error at add_repos()"; exit)
+install_pkg || (echo "Error at install_pkg()"; exit)
+install_aur || (echo "Error at install_aur()"; exit)
+install_python || (echo "Error at install_python()"; exit)
+install_gitmake || (echo "Error at install_gitmake()"; exit)
+install_manual || (echo "Error at install_manual()"; exit)
+install_npm || (echo "Error at install_npm()"; exit)
+dotfiles || (echo "Error at dotfiles()"; exit)
+setup || (echo "Error at setup()"; exit)
+misc || (echo "Error at misc()"; exit)
+post_install || (echo "Error at post_install()"; exit)
 
 echo -e "Done with everything!\n"
