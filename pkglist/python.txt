@@ -1,7 +1,9 @@
 bandit
+black
 Cython
 matplotlib
 mypy
+neovim
 numpy
 pipenv
 pwntools
@@ -16,4 +18,3 @@ scipy
 scrapy
 shodan
 stegoveritas
-yapf

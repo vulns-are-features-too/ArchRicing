@@ -1,0 +1,4 @@
+https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite
+https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh
+https://raw.githubusercontent.com/pentestmonkey/unix-privesc-check/1_x/unix-privesc-check
+https://raw.githubusercontent.com/sleventyeleven/linuxprivchecker/master/linuxprivchecker.py

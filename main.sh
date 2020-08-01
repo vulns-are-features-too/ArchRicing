@@ -52,7 +52,7 @@ add_repos(){
 install_pkg(){
 	echo -e "[START] Installing with standard package manager\n"
 
-	sudo pacman -Syu --noconfirm --needed $(cat $path_to_pkgs/main.txt | tr '\n' ' ') || return -1
+	sudo pacman -Syu --needed $(cat $path_to_pkgs/main.txt | tr '\n' ' ') || return -1
 
 	echo -e "[DONE] Installing with standard package manager\n"
 }
@@ -93,7 +93,9 @@ install_manual(){
 
 	# Loop through /manual_install and run every script
 	for dir in ./manual_install/*; do
-		bash $dir/install.sh
+		cd $dir
+		bash install.sh
+		cd $path_current
 	done || return -1
 
 	echo -e "[DONE] Installing some tools semi-manually\n"
@@ -109,6 +111,36 @@ install_npm(){
 	npm install -g $(cat $path_to_pkgs/npm.txt | tr '\n' ' ') || return -1
 
 	echo -e "[DONE] Installing some tools semi-manually\n"
+}
+
+download_tools(){
+	echo -e "[START] Downloading tools\n"
+
+	echo "Cloning to $path_to_tools"
+	cd $path_to_tools
+	while IFS= read -r line; do
+		git clone $line
+	done < $path_to_pkgs/gitclone
+
+	echo "Downloading paylods"
+	mkdir payloads
+	cd payloads
+	while IFS= read -r line; do
+		[ $(echo $line | cut -d ' ' -f2) == "g" ] && git clone $(echo $line | cut -d ' ' -f1) || wget $(echo $line | cut -d ' ' -f1)
+	done < $path_to_pkgs/payloads
+	cd ..
+
+	echo "Downloading wordlists"
+	mkdir wordlists
+	cd wordlists
+	while IFS= read -r line; do
+		[ $(echo $line | cut -d ' ' -f2) == "g" ] && git clone $(echo $line | cut -d ' ' -f1) || wget $(echo $line | cut -d ' ' -f1)
+	done < $path_to_pkgs/wordlists
+	cd ..
+
+	cd $path_current
+
+	echo -e "[DONE] Downloading tools\n"
 }
 
 dotfiles(){
@@ -134,7 +166,9 @@ setup(){
 
 	# Loop through /setup and run every script
 	for dir in ./setup/*; do
-		bash $dir/setup.sh
+		cd $dir
+		bash setup.sh
+		cd $path_current
 	done || return -1
 
 	echo -e "[DONE] Setting up tools\n"
@@ -174,6 +208,7 @@ post_install(){
 	done < ./pkglist/docker_images.txt
 
 	sudo systemctl enable cronie
+	sudo systemctl enable apparmor
 
 	echo -e "[DONE] Post-installtion\n"
 }
@@ -186,17 +221,18 @@ post_install(){
 
 echo -e "Running install and setup\n"
 
-pre_install || echo "Error at pre_install()"
-add_repos || echo "Error at add_repos()"
-install_pkg || echo "Error at install_pkg()"
-install_aur || echo "Error at install_aur()"
-install_python || echo "Error at install_python()"
-install_gitmake || echo "Error at install_gitmake()"
-install_manual || echo "Error at install_manual()"
-install_npm || echo "Error at install_npm()"
-dotfiles || echo "Error at dotfiles()"
-setup || echo "Error at setup()"
-misc || echo "Error at misc()"
-post_install || echo "Error at post_install()"
+pre_install
+add_repos
+install_pkg
+install_aur
+install_python
+install_gitmake
+install_manual
+install_npm
+download_tools
+dotfiles
+setup
+misc
+post_install
 
 echo -e "Done with everything!\n"

@@ -1,6 +1,8 @@
 cherrytree
+firefox-tridactyl-native
 nessus
 screenkey
 task-spooler
+texlive-moderncv-git
 tldr++
 zsteg
