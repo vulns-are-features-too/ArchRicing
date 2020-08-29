@@ -1,6 +1,6 @@
+Cython
 bandit
 black
-Cython
 matplotlib
 mypy
 neovim
