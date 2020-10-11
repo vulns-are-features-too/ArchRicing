@@ -1,7 +1,13 @@
 Cython
+pwnscripts
+ropper
+ROPGadget
+fierce
 bandit
 black
+eyeD3
 matplotlib
+mysql-client
 mypy
 neovim
 numpy

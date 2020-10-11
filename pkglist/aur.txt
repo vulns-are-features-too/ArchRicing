@@ -5,4 +5,5 @@ screenkey
 task-spooler
 texlive-moderncv-git
 tldr++
+powershell
 zsteg

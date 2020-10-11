@@ -25,8 +25,8 @@ vim --cmd ":source $path_to_vim/init.vim" \
 cp ./.editorconfig $path_to_vim/
 
 # sym-link vim to nvim
-ln -s $HOME/.config/nvim/init.vim $HOME/.vimrc
-ln -s $HOME/.config/nvim/ $HOME/.vim
-sudo ln -s /usr/bin/nvim /usr/bin/vim
+ln -sf $HOME/.config/nvim/init.vim $HOME/.vimrc
+ln -sf $HOME/.config/nvim/ $HOME/.vim
+ln -sf /usr/bin/nvim ~/.local/bin/vim
 
 echo -e "[DONE] Installing and setting up stuff for Vim\n"

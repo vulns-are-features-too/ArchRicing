@@ -88,19 +88,6 @@ install_gitmake(){
 	echo -e "[DONE] Installing stuff from github with make\n"
 }
 
-install_manual(){
-	echo -e "[START] Installing some tools semi-manually\n"
-
-	# Loop through /manual_install and run every script
-	for dir in ./manual_install/*; do
-		cd $dir
-		bash install.sh
-		cd $path_current
-	done || return -1
-
-	echo -e "[DONE] Installing some tools semi-manually\n"
-}
-
 install_npm(){
 	echo -e "[START] Installing some tools semi-manually\n"
 
@@ -227,7 +214,6 @@ install_pkg
 install_aur
 install_python
 install_gitmake
-install_manual
 install_npm
 download_tools
 dotfiles
