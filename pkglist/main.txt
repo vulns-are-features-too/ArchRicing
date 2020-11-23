@@ -1,5 +1,4 @@
 airgeddon
-intel-compute-runtime
 alacritty
 amass
 android-apktool
@@ -74,6 +73,7 @@ freerdp
 fzf
 ghidra
 gimp
+git-annex
 git-lfs
 github-cli
 gittools
@@ -95,6 +95,7 @@ hostapd-wpe
 hping
 hub
 hydra
+intel-compute-runtime
 ipscan
 jaeles
 jd-gui
