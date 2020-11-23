@@ -1,4 +1,3 @@
-cherrytree
 firefox-tridactyl-native
 nessus
 screenkey

@@ -17,7 +17,7 @@ curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > $pa
 python3 -m pip install black pynvim
 
 # Install all the plugins
-vim --cmd ":source $path_to_vim/init.vim" \
+nvim --cmd ":source $path_to_vim/init.vim" \
 	-c ":PlugInstall" \
 	-c ":qa!" 2>/dev/null
 

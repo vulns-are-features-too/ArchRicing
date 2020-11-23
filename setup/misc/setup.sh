@@ -7,22 +7,19 @@ source ../../var.sh
 mkdir -p $HOME/tools/payloads || continue
 
 cd ~/tools
-
-# SecList
-git clone https://github.com/danielmiessler/SecLists
-
-# knock.py
-git clone https://github.com/grongor/knock
+while read -r line; do
+	git clone $line
+done < tools
 
 cd payloads
-
-# PayloadAllTheThings
-git clone https://github.com/swisskyrepo/PayloadsAllTheThings
-
-# linpeas/winpeas
-git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite
+while read -r line; do
+	git clone $line
+done < payloads.txt
 
 # OneRuleToRuleThemAll
+mkdir $HOME/tools/password_cracking_rules
 wget https://raw.githubusercontent.com/NotSoSecure/password_cracking_rules/master/OneRuleToRuleThemAll.rule -o ~/tools/password_cracking_rules/OneRuleToRuleThemAll.rule
+ln -sf /usr/share/john/rules/ $HOME/tools/password_cracking_rules/hashcat_rules
+ln -sf /usr/share/john/rules/ $HOME/tools/password_cracking_rules/john_rules
 
 cd $path_current

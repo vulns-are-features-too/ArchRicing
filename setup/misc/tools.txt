@@ -1,0 +1,3 @@
+https://github.com/danielmiessler/SecLists
+https://github.com/PowerShellMafia/PowerSploit
+https://github.com/grongor/knock

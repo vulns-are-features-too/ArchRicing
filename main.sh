@@ -73,6 +73,14 @@ install_python(){
 	echo -e "[DONE] Installing python modules\n"
 }
 
+install_rust(){
+	echo -e "[START] Installing Rust programs\n"
+
+	cargo install $(cat $path_to_pkgs/python.txt | tr '\n' ' ') || return -1
+
+	echo -e "[DONE] Installing Rust programs\n"
+}
+
 install_gitmake(){
 	echo -e "[START] Installing stuff from github with make\n"
 
@@ -213,6 +221,7 @@ add_repos
 install_pkg
 install_aur
 install_python
+install_rust
 install_gitmake
 install_npm
 download_tools
