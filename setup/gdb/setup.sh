@@ -1,7 +1,7 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 set -e
-source var.sh
+source ../../var.sh
 
 # Install peda
 path_to_peda="$path_to_tools/peda"

@@ -76,24 +76,9 @@ install_python(){
 install_rust(){
 	echo -e "[START] Installing Rust programs\n"
 
-	cargo install $(cat $path_to_pkgs/python.txt | tr '\n' ' ') || return -1
+	cargo install $(cat $path_to_pkgs/rust.txt | tr '\n' ' ') || return -1
 
 	echo -e "[DONE] Installing Rust programs\n"
-}
-
-install_gitmake(){
-	echo -e "[START] Installing stuff from github with make\n"
-
-	while IFS= read -r line; do
-		tmp=$(cat $line | rev | cut -d "/" -f 1 | rev)
-		git clone $line $path_to_tools/$tmp
-		cd $path_to_tools/$tmp
-		make
-		sudo make install
-	done < $path_to_pkgs/gitmake.txt || return -1
-	cd $path_current
-
-	echo -e "[DONE] Installing stuff from github with make\n"
 }
 
 install_npm(){
@@ -141,7 +126,7 @@ download_tools(){
 dotfiles(){
 	echo -e "[START] Installing dot files\n"
 
-	git clone $url_to_dotfiles $path_to_dotfiles
+	[ -d $HOME/git/dotfiles ] || git clone $url_to_dotfiles $path_to_dotfiles
 
 	for line in $path_to_dotfiles/home/.*; do
 		target=$(echo $line | cut -d \/ -f 7)
@@ -188,22 +173,14 @@ misc(){
 post_install(){
 	echo -e "[START] Post-installtion\n"
 
-	cp ./.custom $HOME
-	chmod +x $HOME/.custom/scripts/*
-
 	echo "updatedb"
 	sudo updatedb
 
 	chmod +x $HOME/.config/bspwm/bspwmrc
 
-	echo -e "Pulling docker images\n"
-	while read -r $img; do
-		echo -e "docker pull $img\n"
-		docker pull $img
-	done < ./pkglist/docker_images.txt
-
-	sudo systemctl enable cronie
+	sudo systemctl enable NetworkManager
 	sudo systemctl enable apparmor
+	sudo systemctl enable cronie
 
 	echo -e "[DONE] Post-installtion\n"
 }
@@ -216,18 +193,17 @@ post_install(){
 
 echo -e "Running install and setup\n"
 
-pre_install
-add_repos
-install_pkg
-install_aur
-install_python
-install_rust
-install_gitmake
-install_npm
-download_tools
-dotfiles
-setup
-misc
-post_install
+#pre_install
+#add_repos
+#install_pkg
+#install_aur
+#install_python
+#install_rust
+#install_npm
+#download_tools
+#dotfiles
+#setup
+#misc
+#post_install
 
 echo -e "Done with everything!\n"

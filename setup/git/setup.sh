@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 git config --global alias.a "add"
 git config --global alias.bs "bisect"

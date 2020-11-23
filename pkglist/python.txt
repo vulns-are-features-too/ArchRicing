@@ -1,4 +1,8 @@
 Cython
+mysqlclient
+psycopg2-binary
+pycrypto
+pysqlcipher3
 ROPGadget
 bandit
 black

@@ -17,6 +17,9 @@ autopwn
 autorecon
 avahi
 bashtop
+torbrowser-launcher
+ncmpcpp
+mpc
 bbqsql
 beef
 bettercap
@@ -47,6 +50,7 @@ dmitry
 dnschef
 dnsenum
 dnsrecon
+docker
 dotdotpwn
 driftnet
 dsniff
@@ -146,11 +150,14 @@ net-snmp
 net-tools
 netdiscover
 netsniff-ng
+networkmanager
 newsboat
 nfsshell
 ngrep
 nikto
 nmap
+npm
+nvtop
 onesixtyone
 openldap
 openocd
@@ -169,6 +176,8 @@ plantuml
 polybar
 pompem
 postgresql
+dunst
+apparmor
 pret
 proxychains-ng
 pulseaudio
@@ -242,7 +251,9 @@ unrar
 unzip
 urlscan
 v3n0m
+vagrant
 valgrind
+vifm
 vim
 virtualbox
 volatility
@@ -259,8 +270,6 @@ xautomation
 xclip
 xdo
 xdotool
-xorg-font-util
-xorg-font-utils
 xorg-server
 xorg-xbacklight
 xorg-xdpyinfo

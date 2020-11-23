@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 set -e
-source var.sh
+source ../../var.sh
 
 echo -e "[START] Installing and setting up stuff for Vim\n"
 

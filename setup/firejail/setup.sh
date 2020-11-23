@@ -1,9 +1,9 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 echo -e "[START] Setting up firejail\n"
 
 set -e
-source var.sh
+source ../../var.sh
 
 sudo aa-enforce firejail-default
 

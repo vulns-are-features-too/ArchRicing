@@ -1,6 +1,6 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 set -e
-source var.sh
+source ../../var.sh
 
 arduino-cli core install arduino:avr arduino:megaavr

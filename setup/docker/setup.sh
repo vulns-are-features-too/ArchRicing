@@ -1,7 +1,7 @@
-#!/usr/bin/sh
+#/bin/bash
 
 set -e
-source var.sh
+source ../../var.sh
 
 sudo gpasswd -a $USER docker
 sudo groupadd docker
