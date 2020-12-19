@@ -181,6 +181,8 @@ post_install(){
 	sudo systemctl enable NetworkManager
 	sudo systemctl enable apparmor
 	sudo systemctl enable cronie
+	sudo systemctl enable openntpd
+	systemctl enable --user mpd
 
 	echo -e "[DONE] Post-installtion\n"
 }
