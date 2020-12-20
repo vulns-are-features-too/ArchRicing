@@ -1,6 +1,6 @@
 acpilight
+screenkey
 airgeddon
-alacritty
 amass
 android-apktool
 apparmor
@@ -32,7 +32,6 @@ calcurse
 cewl
 checksec
 chromium
-clipmenu
 commix
 conntrack-tools
 crackmapexec
@@ -47,7 +46,6 @@ davscan
 davtest
 dex2jar
 discord
-dmenu
 dmitry
 dnschef
 dnsenum
@@ -56,7 +54,6 @@ docker
 dotdotpwn
 driftnet
 dsniff
-dunst
 empire
 entr
 enum4linux
@@ -102,7 +99,6 @@ hostapd
 hostapd-wpe
 hping
 htop
-hub
 hydra
 i3lock
 impacket
@@ -148,8 +144,6 @@ minicom
 mitmproxy
 mlocate
 moreutils
-mpc
-mpd
 mpv
 msf-mpc
 msfdb
@@ -159,18 +153,15 @@ nbtscan
 ncmpcpp
 ncrack
 neomutt
-neovim
 net-snmp
 net-tools
 netdiscover
 netsniff-ng
-networkmanager
 newsboat
 nfsshell
 ngrep
 nikto
 nmap
-npm
 nvtop
 onesixtyone
 openldap
@@ -186,9 +177,7 @@ pdfcrack
 perl-image-exiftool
 phantom-evasion
 pixiewps
-pkgfile
 plantuml
-polybar
 pompem
 postgresql
 pret
@@ -199,7 +188,6 @@ pulseaudio-bluetooth
 pulsemixer
 pycuda-headers
 pyrit
-python-pip
 python-pycuda
 python-pygame
 r2ghidra-dec
@@ -214,7 +202,6 @@ remmina
 responder
 rlwrap
 routersploit
-rust
 samba
 set
 shellter
@@ -290,15 +277,6 @@ xautomation
 xclip
 xdo
 xdotool
-xorg-server
-xorg-xdpyinfo
-xorg-xhost
-xorg-xinit
-xorg-xkill
-xorg-xprop
-xorg-xrandr
-xorg-xset
-xorg-xwininfo
 xsser
 xsstrike
 xxeinjector

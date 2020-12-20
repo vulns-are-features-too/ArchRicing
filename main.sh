@@ -49,10 +49,18 @@ add_repos(){
 	echo -e "[DONE] Installing repositories\n"
 }
 
+install_base(){
+	echo -e "[START] Installing base packages\n"
+
+	sudo pacman -S --needed $(cat $path_to_pkgs/base | tr '\n' ' ') || return -1
+
+	echo -e "[DONE] Installing base packages\n"
+}
+
 install_pkg(){
 	echo -e "[START] Installing with standard package manager\n"
 
-	sudo pacman -Syu --needed $(cat $path_to_pkgs/main.txt | tr '\n' ' ') || return -1
+	sudo pacman -S --needed $(cat $path_to_pkgs/main | tr '\n' ' ') || return -1
 
 	echo -e "[DONE] Installing with standard package manager\n"
 }
@@ -60,7 +68,7 @@ install_pkg(){
 install_aur(){
 	echo -e "[START] Installing stuff from the AUR\n"
 
-	yay -S $(cat $path_to_pkgs/aur.txt | tr '\n' ' ') || return -1
+	yay -S $(cat $path_to_pkgs/aur | tr '\n' ' ') || return -1
 
 	echo -e "[DONE] Installing stuff from the AUR\n"
 }
@@ -68,7 +76,7 @@ install_aur(){
 install_python(){
 	echo -e "[START] Installing python modules\n"
 
-	pip3 install -r $path_to_pkgs/python.txt || return -1
+	pip3 install -r $path_to_pkgs/python || return -1
 
 	echo -e "[DONE] Installing python modules\n"
 }
@@ -76,7 +84,7 @@ install_python(){
 install_rust(){
 	echo -e "[START] Installing Rust programs\n"
 
-	cargo install $(cat $path_to_pkgs/rust.txt | tr '\n' ' ') || return -1
+	cargo install $(cat $path_to_pkgs/rust | tr '\n' ' ') || return -1
 
 	echo -e "[DONE] Installing Rust programs\n"
 }
@@ -88,7 +96,7 @@ install_npm(){
 	npm config set prefix ~/.npm
 	export PATH="$PATH:$HOME/.npm/bin"
 
-	npm install -g $(cat $path_to_pkgs/npm.txt | tr '\n' ' ') || return -1
+	npm install -g $(cat $path_to_pkgs/npm | tr '\n' ' ') || return -1
 
 	echo -e "[DONE] Installing some tools semi-manually\n"
 }
@@ -197,6 +205,7 @@ echo -e "Running install and setup\n"
 
 #pre_install
 #add_repos
+#install_base
 #install_pkg
 #install_aur
 #install_python
