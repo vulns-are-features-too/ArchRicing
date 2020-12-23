@@ -60,7 +60,9 @@ install_base(){
 install_pkg(){
 	echo -e "[START] Installing with standard package manager\n"
 
-	sudo pacman -S --needed $(cat $path_to_pkgs/main | tr '\n' ' ') || return -1
+	pkg="$(cat $path_to_pkgs/pacman | tr '\n' ' ')"
+	[ $(systemd-detect-virt) == "none" ] && pkg="$pkg $(cat $path_to_pkgs/pacman-host | tr '\n' ' ')"
+	sudo pacman -S --needed $pkg || return -1
 
 	echo -e "[DONE] Installing with standard package manager\n"
 }
@@ -68,7 +70,9 @@ install_pkg(){
 install_aur(){
 	echo -e "[START] Installing stuff from the AUR\n"
 
-	yay -S $(cat $path_to_pkgs/aur | tr '\n' ' ') || return -1
+	pkg="$(cat $path_to_pkgs/aur | tr '\n' ' ')"
+	[ $(systemd-detect-virt) == "none" ] && pkg="$pkg $(cat $path_to_pkgs/aur-host | tr '\n' ' ')"
+	yay -S $pkg || return -1
 
 	echo -e "[DONE] Installing stuff from the AUR\n"
 }
@@ -168,14 +172,6 @@ misc(){
 
 	# allow acpilight's xbacklight to control brightness without sudo
 	sudo cp ./misc/90-backlight.rules /etc/udev/rules.d/
-
-	# Setup dbus for notify-send with cron
-	mkdir $HOME/.dbus/
-	touch $HOME/.dbus/Xdbus
-	chmod 600 $HOME/.dbus/Xdbus
-	env | grep DBUS_SESSION_BUS_ADDRESS > $HOME/.dbus/Xdbus
-	echo 'export DBUS_SESSION_BUS_ADDRESS' >> $HOME/.dbus/Xdbus
-
 }
 
 post_install(){
@@ -183,8 +179,6 @@ post_install(){
 
 	echo "updatedb"
 	sudo updatedb
-
-	chmod +x $HOME/.config/bspwm/bspwmrc
 
 	sudo systemctl enable NetworkManager
 	sudo systemctl enable apparmor
