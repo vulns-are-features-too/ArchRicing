@@ -6,7 +6,7 @@ set -e
 # Options and Variables
 ##############################
 
-source ./var.sh
+source var.sh
 
 ##############################
 # Declare functions
@@ -17,7 +17,7 @@ echo -e "Setting up functions\n"
 pre_install(){
 	echo -e "[START] Preprocessing\n"
 
-	mkdir -p $path_to_tools $HOME/.config
+	mkdir -p "$path_to_tools" "$HOME/.config"
 
 	echo -e "[DONE] Preprocessing\n"
 }
@@ -52,7 +52,7 @@ add_repos(){
 install_base(){
 	echo -e "[START] Installing base packages\n"
 
-	sudo pacman -S --needed $(cat $path_to_pkgs/base | tr '\n' ' ') || return -1
+	sudo pacman -S --needed $(tr '\n' ' ' < "$path_to_pkgs/base") || exit 1
 
 	echo -e "[DONE] Installing base packages\n"
 }
@@ -60,9 +60,9 @@ install_base(){
 install_pkg(){
 	echo -e "[START] Installing with standard package manager\n"
 
-	pkg="$(cat $path_to_pkgs/pacman | tr '\n' ' ')"
-	[ $(systemd-detect-virt) == "none" ] && pkg="$pkg $(cat $path_to_pkgs/pacman-host | tr '\n' ' ')"
-	sudo pacman -S --needed $pkg || return -1
+	pkg="$(tr '\n' ' ' < "$path_to_pkgs"/pacman)"
+	[ "$(systemd-detect-virt)" == "none" ] && pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/pacman)"
+	sudo pacman -S --needed $pkg || exit 1
 
 	echo -e "[DONE] Installing with standard package manager\n"
 }
@@ -70,9 +70,9 @@ install_pkg(){
 install_aur(){
 	echo -e "[START] Installing stuff from the AUR\n"
 
-	pkg="$(cat $path_to_pkgs/aur | tr '\n' ' ')"
-	[ $(systemd-detect-virt) == "none" ] && pkg="$pkg $(cat $path_to_pkgs/aur-host | tr '\n' ' ')"
-	yay -S $pkg || return -1
+	pkg="$(tr '\n' ' ' < "$path_to_pkgs"/aur)"
+	[ "$(systemd-detect-virt)" == "none" ] && pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/aur-host)"
+	yay -S $pkg || exit 1
 
 	echo -e "[DONE] Installing stuff from the AUR\n"
 }
@@ -80,7 +80,7 @@ install_aur(){
 install_python(){
 	echo -e "[START] Installing python modules\n"
 
-	pip3 install -r $path_to_pkgs/python || return -1
+	pip3 install -r "$path_to_pkgs/python" || exit 1
 
 	echo -e "[DONE] Installing python modules\n"
 }
@@ -88,7 +88,7 @@ install_python(){
 install_rust(){
 	echo -e "[START] Installing Rust programs\n"
 
-	cargo install $(cat $path_to_pkgs/rust | tr '\n' ' ') || return -1
+	cargo install $(tr '\n' ' ' < "$path_to_pkgs/rust") || exit 1
 
 	echo -e "[DONE] Installing Rust programs\n"
 }
@@ -99,8 +99,7 @@ install_npm(){
 	# Setup npm to be used without sudo
 	npm config set prefix ~/.npm
 	export PATH="$PATH:$HOME/.npm/bin"
-
-	npm install -g $(cat $path_to_pkgs/npm | tr '\n' ' ') || return -1
+	npm install -g $(tr '\n' ' ' < "$path_to_pkgs/npm") || exit 1
 
 	echo -e "[DONE] Installing some tools semi-manually\n"
 }
@@ -109,28 +108,12 @@ download_tools(){
 	echo -e "[START] Downloading tools\n"
 
 	echo "Cloning to $path_to_tools"
-	cd $path_to_tools
+	cd "$path_to_tools"
 	while IFS= read -r line; do
-		git clone $line
-	done < $path_to_pkgs/gitclone
+		git clone "$line"
+	done < "$path_to_pkgs/gitclone"
 
-	echo "Downloading paylods"
-	mkdir payloads
-	cd payloads
-	while IFS= read -r line; do
-		[ $(echo $line | cut -d ' ' -f2) == "g" ] && git clone $(echo $line | cut -d ' ' -f1) || wget $(echo $line | cut -d ' ' -f1)
-	done < $path_to_pkgs/payloads
-	cd ..
-
-	echo "Downloading wordlists"
-	mkdir wordlists
-	cd wordlists
-	while IFS= read -r line; do
-		[ $(echo $line | cut -d ' ' -f2) == "g" ] && git clone $(echo $line | cut -d ' ' -f1) || wget $(echo $line | cut -d ' ' -f1)
-	done < $path_to_pkgs/wordlists
-	cd ..
-
-	cd $path_current
+	cd "$path_current"
 
 	echo -e "[DONE] Downloading tools\n"
 }
@@ -138,17 +121,17 @@ download_tools(){
 dotfiles(){
 	echo -e "[START] Installing dot files\n"
 
-	[ -d $HOME/git/dotfiles ] || git clone $url_to_dotfiles $path_to_dotfiles
+	[ -d "$HOME/git/dotfiles" ] || git clone "$url_to_dotfiles" "$path_to_dotfiles"
 
-	for line in $path_to_dotfiles/home/.*; do
-		target=$(echo $line | cut -d \/ -f 7)
-		[ $target != "." ] && [ $target != ".." ] && ln -sf $line $HOME/$target
-	done || return -1
+	for line in "$path_to_dotfiles"/home/.*; do
+		target="$(echo "$line" | cut -d \/ -f 7)"
+		[ "$target" != "." ] && [ "$target" != ".." ] && ln -sf $line "$HOME/$target"
+	done || exit 1
 
-	for line in $path_to_dotfiles/config/*; do
-		target=$(echo $line | cut -d \/ -f 7)
-		ln -sf $line $HOME/.config/$target
-	done || return -1
+	for line in "$path_to_dotfiles"/config/*; do
+		target="$(echo $line | cut -d \/ -f 7)"
+		ln -sf "$line" "$HOME/.config/$target"
+	done || exit 1
 
 	echo -e "[DONE] Installing dot files\n"
 }
@@ -158,10 +141,10 @@ setup(){
 
 	# Loop through /setup and run every script
 	for dir in ./setup/*; do
-		cd $dir
+		cd "$dir"
 		bash setup.sh
-		cd $path_current
-	done || return -1
+		cd "$path_current"
+	done || exit 1
 
 	echo -e "[DONE] Setting up tools\n"
 }
@@ -181,6 +164,7 @@ post_install(){
 	sudo updatedb
 
 	sudo systemctl enable NetworkManager
+	sudo systemctl enable bluetooth
 	sudo systemctl enable apparmor
 	sudo systemctl enable cronie
 	sudo systemctl enable openntpd

@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
 # Downloads miscellaneous tools & wordlists
+[ $(systemd-detect-virt) == "none" ] || exit
 set -e
 source ../../var.sh
 
@@ -8,7 +9,7 @@ mkdir -p $HOME/tools/payloads || continue
 
 cd ~/tools
 while read -r line; do
-	git clone $line
+	git clone $line --depth 1
 done < tools
 
 cd payloads

@@ -10,4 +10,4 @@ sudo aa-enforce firejail-default
 echo "Copying firejail profiles"
 sudo cp ./profiles/* /etc/firejail/
 
-echo -e "[START] Setting up firejail\n"
+echo -e "[DONE] Setting up firejail\n"

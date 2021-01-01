@@ -17,6 +17,7 @@ beef
 bettercap
 binwalk
 bluez
+bluez-utils
 braa
 burpsuite
 calcurse
@@ -55,6 +56,7 @@ ffmpeg
 ffuf
 fimap
 finalrecon
+firejail
 flameshot
 foremost
 fping
@@ -99,6 +101,7 @@ leviathan
 lib32-gcc-libs
 lighttpd
 linux-exploit-suggester
+linux-lts-headers
 lshw
 lsof
 ltrace
@@ -115,6 +118,7 @@ metasploit
 mitmproxy
 mlocate
 moreutils
+mp3info
 mpv
 msf-mpc
 msfdb
@@ -134,6 +138,7 @@ onesixtyone
 openldap
 openntpd
 openocd
+openssh
 openstego
 owasp-zsc
 p0f
@@ -141,10 +146,13 @@ pandoc
 pandoc-crossref
 parameth
 patator
+pcmanfm
 pdfcrack
+perl-file-mimeinfo
 perl-image-exiftool
 phantom-evasion
 pixiewps
+pkgfile
 plantuml
 pompem
 postgresql
@@ -160,6 +168,7 @@ responder
 rlwrap
 samba
 set
+shellcheck
 sherlock
 shfmt
 sipcalc
@@ -177,6 +186,7 @@ sqlmap
 sqlninja
 squashfs-tools
 ssh-audit
+sshfs
 sshpass
 sshuttle
 sslscan
@@ -201,9 +211,8 @@ torbrowser-launcher
 tplmap
 tree
 ttf-fira-mono
-zsh
-zsh-syntax-highlighting
-pcmanfm
+ttf-font-awesome
+ttf-font-icons
 ttf-hanazono
 ttf-sazanami
 udisks2
@@ -242,3 +251,5 @@ zathura
 zathura-pdf-mupdf
 zbar
 zip
+zsh
+zsh-syntax-highlighting
