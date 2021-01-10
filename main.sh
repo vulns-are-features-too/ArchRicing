@@ -77,10 +77,11 @@ install_aur(){
 	echo -e "[DONE] Installing stuff from the AUR\n"
 }
 
-install_python(){
+install_pip(){
 	echo -e "[START] Installing python modules\n"
 
-	pip3 install -r "$path_to_pkgs/python" || exit 1
+	pip3 install -r "$path_to_pkgs/pip" || exit 1
+	pipx install -r "$path_to_pkgs/pipx" || exit 1
 
 	echo -e "[DONE] Installing python modules\n"
 }
@@ -186,7 +187,7 @@ echo -e "Running install and setup\n"
 #install_base
 #install_pkg
 #install_aur
-#install_python
+#install_pip
 #install_rust
 #install_npm
 #download_tools
