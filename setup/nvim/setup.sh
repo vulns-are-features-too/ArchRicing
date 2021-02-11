@@ -5,6 +5,11 @@ source ../../var.sh
 
 echo -e "[START] Installing and setting up stuff for Vim\n"
 
+# Get nvim nightly
+wget 'https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage'
+mv nvim.appimage ~/.local/bin/nvim
+chmod +x ~/.local/bin/nvim
+
 mkdir -p $path_to_vim/autoload $path_to_vim/plugged
 
 # Install stuff with package manager
@@ -21,12 +26,15 @@ nvim --cmd ":source $path_to_vim/init.vim" \
 	-c ":PlugInstall" \
 	-c ":qa!" 2>/dev/null
 
+# Install tree-sitter stuff
+nvim --cmd ":source $path_to_vim/init.vim" \
+    -c ":TSInstall bash c cpp html java javascript json php python regex rust"
+	-c ":qa!" 2>/dev/null
+
 # vim-jsbeautify
 cp ./.editorconfig $path_to_vim/
 
 # sym-link vim to nvim
-ln -sf $HOME/.config/nvim/init.vim $HOME/.vimrc
-ln -sf $HOME/.config/nvim/ $HOME/.vim
-ln -sf /usr/bin/nvim ~/.local/bin/vim
+ln -sf ~/.local/bin/nvim ~/.local/bin/vim
 
 echo -e "[DONE] Installing and setting up stuff for Vim\n"

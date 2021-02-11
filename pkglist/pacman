@@ -1,4 +1,7 @@
 acpilight
+adobe-source-han-sans-jp-fonts
+adobe-source-han-serif-jp-fonts
+tree-sitter
 amass
 android-apktool
 apparmor
@@ -22,6 +25,7 @@ braa
 burpsuite
 calcurse
 cewl
+chankro
 checksec
 chromium
 commix
@@ -33,12 +37,14 @@ ctags
 davfs2
 davscan
 davtest
+db
 dex2jar
 dmitry
 dnschef
 dnsenum
 dnsrecon
 docker
+dos2unix
 dotdotpwn
 driftnet
 dsniff
@@ -124,7 +130,7 @@ msf-mpc
 msfdb
 msfenum
 mssqlscan
-nbtscan
+blackarch/nbtscan
 ncrack
 net-snmp
 net-tools
@@ -142,6 +148,7 @@ openssh
 openstego
 owasp-zsc
 p0f
+p7zip
 pandoc
 pandoc-crossref
 parameth
@@ -164,10 +171,6 @@ radare2-cutter
 rdesktop
 rebind
 recon-ng
-p7zip
-db
-adobe-source-han-serif-jp-fonts
-adobe-source-han-sans-jp-fonts
 responder
 rlwrap
 samba

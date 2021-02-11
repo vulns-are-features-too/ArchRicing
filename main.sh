@@ -81,7 +81,9 @@ install_pip(){
 	echo -e "[START] Installing python modules\n"
 
 	pip3 install -r "$path_to_pkgs/pip" || exit 1
-	pipx install -r "$path_to_pkgs/pipx" || exit 1
+	while read -r line; do
+		pipx install "$line"
+	done < $path_to_pkgs/pipx
 
 	echo -e "[DONE] Installing python modules\n"
 }

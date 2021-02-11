@@ -1,13 +1,12 @@
-Cython
 ROPGadget
 bandit
 black
+crackmapexec
 eyed3
 fierce
 httplib2
 matplotlib
 mypy
-mysql-client
 mysqlclient
 neovim
 numpy
@@ -29,4 +28,3 @@ scapy
 scipy
 scrapy
 shodan
-stegoveritas
