@@ -71,7 +71,7 @@ install_aur(){
 	echo -e "[START] Installing stuff from the AUR\n"
 
 	pkg="$(tr '\n' ' ' < "$path_to_pkgs"/aur)"
-	[ "$(systemd-detect-virt)" == "none" ] && pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/aur-host)"
+	#[ "$(systemd-detect-virt)" == "none" ] && pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/aur-host)"
 	yay -S $pkg || exit 1
 
 	echo -e "[DONE] Installing stuff from the AUR\n"

@@ -1,7 +1,8 @@
 acpilight
+clamav
+ad-ldap-enum
 adobe-source-han-sans-jp-fonts
 adobe-source-han-serif-jp-fonts
-tree-sitter
 amass
 android-apktool
 apparmor
@@ -19,8 +20,10 @@ bbqsql
 beef
 bettercap
 binwalk
+blackarch/nbtscan
 bluez
 bluez-utils
+bpython
 braa
 burpsuite
 calcurse
@@ -28,6 +31,7 @@ cewl
 chankro
 checksec
 chromium
+cmsmap
 commix
 conntrack-tools
 crackmapexec
@@ -56,7 +60,6 @@ evil-winrm
 exploitdb
 eyewitness
 fcrackzip
-fd
 fernflower
 ffmpeg
 ffuf
@@ -103,6 +106,7 @@ jre8-openjdk
 jython
 kerbrute
 ldapdomaindump
+ldeep
 leviathan
 lib32-gcc-libs
 lighttpd
@@ -130,7 +134,6 @@ msf-mpc
 msfdb
 msfenum
 mssqlscan
-blackarch/nbtscan
 ncrack
 net-snmp
 net-tools
@@ -140,6 +143,7 @@ nfsshell
 ngrep
 nikto
 nmap
+oledump
 onesixtyone
 openldap
 openntpd
@@ -154,7 +158,9 @@ pandoc-crossref
 parameth
 patator
 pcmanfm
+pdf-parser
 pdfcrack
+pdfid
 perl-file-mimeinfo
 perl-image-exiftool
 phantom-evasion
@@ -171,6 +177,7 @@ radare2-cutter
 rdesktop
 rebind
 recon-ng
+remmina
 responder
 rlwrap
 samba
@@ -216,7 +223,11 @@ tig
 toilet
 torbrowser-launcher
 tplmap
+traceroute
+ioine
+ipmitool
 tree
+tree-sitter
 ttf-fira-mono
 ttf-font-awesome
 ttf-font-icons
@@ -228,6 +239,7 @@ unicornscan
 uniscan
 unrar
 unzip
+upx
 urlscan
 v3n0m
 valgrind
@@ -239,6 +251,9 @@ w3af
 wapiti
 wfuzz
 whatweb
+whois
+windapsearch
+wine
 wireguard-tools
 wireshark-qt
 wmname

@@ -1,4 +1,5 @@
 aircrack-ng
+blueman
 airgeddon
 arachni
 arandr
@@ -10,8 +11,6 @@ bloodhound
 bully
 cuda
 discord
-firefox-tridactyl
-steam-manjaro
 flashrom
 fluxion
 git-lfs
@@ -40,7 +39,6 @@ pyrit
 python-pycuda
 rclone
 reaver
-remmina
 screenkey
 stegcracker
 vagrant

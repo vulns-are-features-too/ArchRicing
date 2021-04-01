@@ -26,7 +26,7 @@ nvim --cmd ":source $path_to_vim/init.vim" \
 	-c ":PlugInstall" \
 	-c ":qa!" 2>/dev/null
 
-# Install tree-sitter stuff
+# tree-sitter, Vimspector
 nvim --cmd ":source $path_to_vim/init.vim" \
     -c ":TSInstall bash c cpp html java javascript json php python regex rust"
 	-c ":qa!" 2>/dev/null
