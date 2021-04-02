@@ -1,5 +1,4 @@
 aircrack-ng
-blueman
 airgeddon
 arachni
 arandr
@@ -8,9 +7,11 @@ arduino-avr-core
 arduino-cli
 armitage
 bloodhound
+blueman
 bully
 cuda
 discord
+firefox-tridactyl
 flashrom
 fluxion
 git-lfs

@@ -33,3 +33,9 @@ whitelist ${HOME}/Downloads
 whitelist ${HOME}/Videos
 whitelist ${HOME}/tools
 whitelist ${HOME}/ctf
+
+# tridactyl native messenger
+whitelist ${HOME}/.config/tridactyl
+whitelist /usr/lib/tridactyl
+whitelist /usr/lib/firefox
+whitelist /usr/lib/mozilla
