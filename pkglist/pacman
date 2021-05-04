@@ -1,5 +1,4 @@
 acpilight
-clamav
 ad-ldap-enum
 adobe-source-han-sans-jp-fonts
 adobe-source-han-serif-jp-fonts
@@ -15,6 +14,7 @@ audacity
 autopsy
 autorecon
 avahi
+aws-cli
 bashtop
 bbqsql
 beef
@@ -23,7 +23,6 @@ binwalk
 blackarch/nbtscan
 bluez
 bluez-utils
-bpython
 braa
 burpsuite
 calcurse
@@ -31,6 +30,7 @@ cewl
 chankro
 checksec
 chromium
+clamav
 cmsmap
 commix
 conntrack-tools
@@ -71,11 +71,13 @@ foremost
 fping
 freerdp
 fzf
+gdb
 ghidra
 gimp
 github-cli
 gittools
 gnu-netcat
+go
 gobuster
 golismero
 gospider
@@ -92,6 +94,8 @@ hping
 htop
 hydra
 impacket
+ioine
+ipmitool
 ipscan
 jad
 jaeles
@@ -173,7 +177,6 @@ pret
 proxychains-ng
 r2ghidra-dec
 radare2
-radare2-cutter
 rdesktop
 rebind
 recon-ng
@@ -224,8 +227,6 @@ toilet
 torbrowser-launcher
 tplmap
 traceroute
-ioine
-ipmitool
 tree
 tree-sitter
 ttf-fira-mono
@@ -262,6 +263,7 @@ xautomation
 xclip
 xdo
 xdotool
+xmlstarlet
 xsser
 xsstrike
 xterm
