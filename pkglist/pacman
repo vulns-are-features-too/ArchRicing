@@ -1,4 +1,5 @@
 acpilight
+transmission-cli
 ad-ldap-enum
 adobe-source-han-sans-jp-fonts
 adobe-source-han-serif-jp-fonts
@@ -59,7 +60,6 @@ ettercap
 evil-winrm
 exploitdb
 eyewitness
-fcrackzip
 fernflower
 ffmpeg
 ffuf
@@ -148,7 +148,6 @@ ngrep
 nikto
 nmap
 oledump
-onesixtyone
 openldap
 openntpd
 openocd
@@ -192,6 +191,8 @@ sipcalc
 skipfish
 sleuthkit
 smbmap
+snmpenum
+snmpscan
 snow
 socat
 social-mapper

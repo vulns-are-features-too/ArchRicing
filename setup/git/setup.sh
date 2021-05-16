@@ -15,3 +15,6 @@ git config --global alias.s "status"
 git config --global alias.sw "switch"
 git config --global alias.root "rev-parse --show-toplevel"
 git config --global credential.helper "cache"
+git config --global commit.gpgsign true
+
+gh config set git_protocol ssh

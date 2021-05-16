@@ -1,7 +1,7 @@
 ROPGadget
-oletools
 bandit
 black
+bpython
 crackmapexec
 eyed3
 fierce
@@ -12,6 +12,7 @@ mysqlclient
 neovim
 numpy
 oauth2client
+oletools
 pipenv
 psycopg2-binary
 pwnscripts

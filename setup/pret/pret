@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd ~/tools/PRET
+exec python3 pret.py
