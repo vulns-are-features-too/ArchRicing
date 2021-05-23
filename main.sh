@@ -49,14 +49,6 @@ add_repos(){
 	echo -e "[DONE] Installing repositories\n"
 }
 
-install_base(){
-	echo -e "[START] Installing base packages\n"
-
-	xargs sudo pacman -S --needed < "$path_to_pkgs/base" || exit 1
-
-	echo -e "[DONE] Installing base packages\n"
-}
-
 install_pkg(){
 	echo -e "[START] Installing with standard package manager\n"
 
@@ -186,7 +178,6 @@ echo -e "Running install and setup\n"
 
 #pre_install
 #add_repos
-#install_base
 #install_pkg
 #install_aur
 #install_pip

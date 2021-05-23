@@ -2,6 +2,7 @@ acpilight
 ad-ldap-enum
 adobe-source-han-sans-jp-fonts
 adobe-source-han-serif-jp-fonts
+alacritty
 amass
 android-apktool
 apparmor
@@ -24,6 +25,7 @@ blackarch/nbtscan
 bluez
 bluez-utils
 braa
+bspwm
 burpsuite
 calcurse
 cewl
@@ -31,6 +33,7 @@ chankro
 checksec
 chromium
 clamav
+clipmenu
 cmsmap
 commix
 conntrack-tools
@@ -43,6 +46,7 @@ davscan
 davtest
 db
 dex2jar
+dmenu
 dmitry
 dnschef
 dnsenum
@@ -52,6 +56,7 @@ dos2unix
 dotdotpwn
 driftnet
 dsniff
+dunst
 empire
 entr
 enum4linux
@@ -64,6 +69,7 @@ ffmpeg
 ffuf
 fimap
 finalrecon
+firefox
 firejail
 flameshot
 foremost
@@ -73,6 +79,7 @@ fzf
 gdb
 ghidra
 gimp
+git
 github-cli
 gittools
 gnu-netcat
@@ -91,6 +98,7 @@ hostapd
 hostapd-wpe
 hping
 htop
+hub
 hydra
 iaito
 impacket
@@ -122,6 +130,7 @@ ltrace
 lxd
 macchanger
 maim
+make
 man-db
 mariadb-clients
 masscan
@@ -133,20 +142,25 @@ mitmproxy
 mlocate
 moreutils
 mp3info
+mpc
+mpd
 mpv
 msf-mpc
 msfdb
 msfenum
 mssqlscan
 ncrack
+neovim
 net-snmp
 net-tools
 netdiscover
 netsniff-ng
+networkmanager
 nfsshell
 ngrep
 nikto
 nmap
+npm
 oledump
 openldap
 openntpd
@@ -170,10 +184,12 @@ phantom-evasion
 pixiewps
 pkgfile
 plantuml
+polybar
 pompem
 postgresql
 pret
 proxychains-ng
+python-pip
 r2ghidra-dec
 radare2
 rdesktop
@@ -182,6 +198,7 @@ recon-ng
 remmina
 responder
 rlwrap
+rust
 samba
 set
 shellcheck
@@ -216,6 +233,7 @@ strace
 subbrute
 subfinder
 subscraper
+sxhkd
 sxiv
 tcpflow
 tesseract
@@ -238,6 +256,7 @@ ttf-hanazono
 ttf-sazanami
 udisks2
 ufw
+unclutter
 unicornscan
 uniscan
 unrar
@@ -264,6 +283,15 @@ xclip
 xdo
 xdotool
 xmlstarlet
+xorg-server
+xorg-xdpyinfo
+xorg-xhost
+xorg-xinit
+xorg-xkill
+xorg-xprop
+xorg-xrandr
+xorg-xset
+xorg-xwininfo
 xsser
 xsstrike
 xterm
