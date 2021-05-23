@@ -52,7 +52,7 @@ add_repos(){
 install_base(){
 	echo -e "[START] Installing base packages\n"
 
-	sudo pacman -S --needed $(tr '\n' ' ' < "$path_to_pkgs/base") || exit 1
+	xargs sudo pacman -S --needed < "$path_to_pkgs/base" || exit 1
 
 	echo -e "[DONE] Installing base packages\n"
 }
@@ -91,7 +91,7 @@ install_pip(){
 install_rust(){
 	echo -e "[START] Installing Rust programs\n"
 
-	cargo install $(tr '\n' ' ' < "$path_to_pkgs/rust") || exit 1
+	xargs cargo install < "$path_to_pkgs/rust" || exit 1
 
 	echo -e "[DONE] Installing Rust programs\n"
 }
@@ -102,7 +102,7 @@ install_npm(){
 	# Setup npm to be used without sudo
 	npm config set prefix ~/.npm
 	export PATH="$PATH:$HOME/.npm/bin"
-	npm install -g $(tr '\n' ' ' < "$path_to_pkgs/npm") || exit 1
+	xargs npm install -g < "$path_to_pkgs/npm" || exit 1
 
 	echo -e "[DONE] Installing some tools semi-manually\n"
 }

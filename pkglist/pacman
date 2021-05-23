@@ -1,5 +1,4 @@
 acpilight
-transmission-cli
 ad-ldap-enum
 adobe-source-han-sans-jp-fonts
 adobe-source-han-serif-jp-fonts
@@ -93,6 +92,7 @@ hostapd-wpe
 hping
 htop
 hydra
+iaito
 impacket
 ioine
 ipmitool
@@ -228,6 +228,7 @@ toilet
 torbrowser-launcher
 tplmap
 traceroute
+transmission-cli
 tree
 tree-sitter
 ttf-fira-mono
@@ -247,8 +248,6 @@ v3n0m
 valgrind
 vifm
 vim
-volatility
-volatility-extra
 w3af
 wapiti
 wfuzz
