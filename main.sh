@@ -74,18 +74,10 @@ install_pip(){
 
 	pip3 install -r "$path_to_pkgs/pip" || exit 1
 	while read -r line; do
-		pipx install "$line"
+		python3 -m pipx install "$line"
 	done < $path_to_pkgs/pipx
 
 	echo -e "[DONE] Installing python modules\n"
-}
-
-install_rust(){
-	echo -e "[START] Installing Rust programs\n"
-
-	xargs cargo install < "$path_to_pkgs/rust" || exit 1
-
-	echo -e "[DONE] Installing Rust programs\n"
 }
 
 install_npm(){
@@ -100,6 +92,9 @@ install_npm(){
 }
 
 download_tools(){
+
+	[ "$(systemd-detect-virt)" == "none" ] || exit
+
 	echo -e "[START] Downloading tools\n"
 
 	echo "Cloning to $path_to_tools"
@@ -165,6 +160,8 @@ post_install(){
 	sudo systemctl enable openntpd
 	systemctl enable --user mpd
 
+  chsh -s "$(which zsh)"
+
 	echo -e "[DONE] Post-installtion\n"
 }
 
@@ -181,7 +178,6 @@ echo -e "Running install and setup\n"
 #install_pkg
 #install_aur
 #install_pip
-#install_rust
 #install_npm
 #download_tools
 #dotfiles

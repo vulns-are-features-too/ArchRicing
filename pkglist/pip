@@ -2,7 +2,6 @@ ROPGadget
 bandit
 black
 bpython
-crackmapexec
 eyed3
 fierce
 httplib2
@@ -14,6 +13,7 @@ numpy
 oauth2client
 oletools
 pipenv
+pipx
 psycopg2-binary
 pwnscripts
 pwntools

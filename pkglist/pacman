@@ -195,7 +195,6 @@ recon-ng
 remmina
 responder
 rlwrap
-rust
 samba
 set
 shellcheck
@@ -291,6 +290,7 @@ xsser
 xsstrike
 xterm
 xxeinjector
+yay
 yersinia
 youtube-dl
 zaproxy
