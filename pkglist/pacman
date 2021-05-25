@@ -196,6 +196,9 @@ remmina
 responder
 rlwrap
 samba
+ngrok
+picom
+phpggc
 set
 shellcheck
 sherlock

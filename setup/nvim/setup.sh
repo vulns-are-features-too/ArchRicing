@@ -22,12 +22,12 @@ curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > $pa
 python3 -m pip install black pynvim
 
 # Install all the plugins
-nvim --cmd ":source $path_to_vim/init.vim" \
+~/.local/bin/nvim --cmd ":source $path_to_vim/init.vim" \
 	-c ":PlugInstall" \
 	-c ":qa!" 2>/dev/null
 
 # tree-sitter, Vimspector
-nvim --cmd ":source $path_to_vim/init.vim" \
+~/.local/bin/nvim --cmd ":source $path_to_vim/init.vim" \
     -c ":TSInstall bash c cpp html java javascript json php python regex rust"
 	-c ":qa!" 2>/dev/null
 
