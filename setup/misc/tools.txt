@@ -1,4 +1,7 @@
-https://github.com/danielmiessler/SecLists
-https://github.com/marlonrichert/zsh-autocomplete
 https://github.com/PowerShellMafia/PowerSploit
+https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite
+https://github.com/danielmiessler/SecLists
+https://github.com/devanshbatham/ParamSpider
 https://github.com/grongor/knock
+https://github.com/marlonrichert/zsh-autocomplete
+https://github.com/stealthcopter/deepce

@@ -81,14 +81,23 @@ install_pip(){
 }
 
 install_npm(){
-	echo -e "[START] Installing some tools semi-manually\n"
+	echo -e "[START] Installing npm tools\n"
 
 	# Setup npm to be used without sudo
 	npm config set prefix ~/.npm
 	export PATH="$PATH:$HOME/.npm/bin"
 	xargs npm install -g < "$path_to_pkgs/npm" || exit 1
 
-	echo -e "[DONE] Installing some tools semi-manually\n"
+	echo -e "[DONE] Installing npm tools\n"
+}
+
+install_go(){
+	echo -e "[START] Installing go tools\n"
+
+  go env -w GO111MODULE=pn
+  xargs -I pkg go get -u "pkg" < "$path_to_pkgs/go"
+
+	echo -e "[DONE] Installing go tools\n"
 }
 
 download_tools(){
@@ -179,6 +188,7 @@ echo -e "Running install and setup\n"
 #install_aur
 #install_pip
 #install_npm
+#install_go
 #download_tools
 #dotfiles
 #setup
