@@ -169,7 +169,8 @@ misc(){
 	sudo cp ./misc/30-touchpad.conf /etc/X11/xorg.conf.d/
 
 	# allow acpilight's xbacklight to control brightness without sudo
-	sudo cp ./misc/90-backlight.rules /etc/udev/rules.d/
+	sudo cp ./misc/backlight.rules /etc/udev/rules.d/
+  sudo usermod -aG video "$USER"
 }
 
 post_install(){
