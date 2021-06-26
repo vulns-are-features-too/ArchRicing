@@ -1,6 +1,4 @@
 aircrack-ng
-qemu
-usbguard
 airgeddon
 arachni
 arandr
@@ -41,10 +39,12 @@ pulsemixer
 pycuda-headers
 pyrit
 python-pycuda
+qemu
 rclone
 reaver
 screenkey
 stegcracker
+usbguard
 vagrant
 virtualbox
 virtualbox-host-dkms

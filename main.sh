@@ -91,10 +91,26 @@ install_npm(){
 	echo -e "[DONE] Installing npm tools\n"
 }
 
+install_rust(){
+	echo -e "[START] Installing rust tools\n"
+
+	# Install rustup
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+	# Rust Language Server
+	rustup component add rls rust-analysis rust-src
+
+	cargo install cargo-audit --features=fix
+
+	xargs cargo install < "$path_to_pkgs/rust"
+
+	echo -e "[DONE] Installing rust tools\n"
+}
+
 install_go(){
 	echo -e "[START] Installing go tools\n"
 
-  go env -w GO111MODULE=pn
+  go env -w GO111MODULE=on
   xargs -I pkg go get -u "pkg" < "$path_to_pkgs/go"
 
 	echo -e "[DONE] Installing go tools\n"
@@ -188,6 +204,7 @@ echo -e "Running install and setup\n"
 #install_aur
 #install_pip
 #install_npm
+#install_rust
 #install_go
 #download_tools
 #dotfiles
