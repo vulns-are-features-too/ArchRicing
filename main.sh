@@ -54,6 +54,7 @@ install_pkg(){
 
 	pkg="$(tr '\n' ' ' < "$path_to_pkgs"/pacman)"
 	[ "$(systemd-detect-virt)" == "none" ] && pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/pacman-host)"
+	[ "$(systemd-detect-virt)" != "none" ] && pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/pacman-guest)"
 	sudo pacman -S --needed $pkg || exit 1
 
 	echo -e "[DONE] Installing with standard package manager\n"

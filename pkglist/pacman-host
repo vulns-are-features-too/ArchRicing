@@ -54,3 +54,4 @@ virt-manager
 linux-headers
 virtualbox
 virtualbox-host-modules-arch
+mariadb
