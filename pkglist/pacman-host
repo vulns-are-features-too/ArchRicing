@@ -51,5 +51,6 @@ usbguard
 vagrant
 vde2
 virt-manager
+linux-headers
 virtualbox
-virtualbox-host-dkms
+virtualbox-host-modules-arch
