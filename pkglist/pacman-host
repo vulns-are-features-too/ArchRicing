@@ -11,6 +11,8 @@ blueman
 bully
 cuda
 discord
+dnsmasq
+ebtables
 firefox-tridactyl
 flashrom
 fluxion
@@ -20,7 +22,7 @@ hashcat
 i3lock
 intel-compute-runtime
 kismet
-linux-lts-virtualbox-host-modules
+libvirt
 lm_sensors
 maltego
 maven
@@ -29,6 +31,7 @@ mdk4
 minicom
 ncmpcpp
 neomutt
+newsboat
 newsboat
 nvtop
 pavucontrol
@@ -46,5 +49,7 @@ screenkey
 stegcracker
 usbguard
 vagrant
+vde2
+virt-manager
 virtualbox
 virtualbox-host-dkms

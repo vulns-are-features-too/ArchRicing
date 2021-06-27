@@ -53,7 +53,7 @@ install_pkg(){
 	echo -e "[START] Installing with standard package manager\n"
 
 	pkg="$(tr '\n' ' ' < "$path_to_pkgs"/pacman)"
-	[ "$(systemd-detect-virt)" == "none" ] && pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/pacman)"
+	[ "$(systemd-detect-virt)" == "none" ] && pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/pacman-host)"
 	sudo pacman -S --needed $pkg || exit 1
 
 	echo -e "[DONE] Installing with standard package manager\n"
@@ -180,11 +180,14 @@ post_install(){
 	sudo updatedb
 
 	sudo systemctl enable NetworkManager
-	sudo systemctl enable bluetooth
 	sudo systemctl enable apparmor
+	sudo systemctl enable bluetooth
 	sudo systemctl enable cronie
 	sudo systemctl enable openntpd
+  sudo systemctl enable libvirtd
 	systemctl enable --user mpd
+
+  sudo usermod -aG audit,mount,network,video jco
 
   chsh -s "$(which zsh)"
 

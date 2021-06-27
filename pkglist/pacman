@@ -22,9 +22,11 @@ beef
 bettercap
 binwalk
 blackarch/nbtscan
+blueman
 bluez
 bluez-utils
 braa
+bridge-utils
 bspwm
 burpsuite
 calcurse
@@ -53,6 +55,7 @@ dnschef
 dnsenum
 dnsrecon
 docker
+docker-compose
 dos2unix
 dotdotpwn
 dotnet-host
@@ -73,6 +76,7 @@ ffuf
 fimap
 finalrecon
 firefox
+firefox-tridactyl
 firejail
 flameshot
 foremost
@@ -157,6 +161,7 @@ net-snmp
 net-tools
 netdiscover
 netsniff-ng
+network-manager-applet
 networkmanager
 networkminer
 nfs-utils
@@ -275,6 +280,7 @@ urlscan
 usbguard
 v3n0m
 valgrind
+vi
 vifm
 vim
 w3af
