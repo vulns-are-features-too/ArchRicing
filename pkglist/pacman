@@ -43,7 +43,6 @@ crackmapexec
 crowbar
 crunch
 csrftester
-ctags
 davfs2
 davscan
 davtest
@@ -84,7 +83,6 @@ fping
 freerdp
 fzf
 gdb
-ghidra
 gimp
 git
 github-cli
@@ -107,7 +105,6 @@ hping
 htop
 hub
 hydra
-iaito
 impacket
 iodine
 ipmitool
@@ -156,12 +153,10 @@ msfdb
 msfenum
 mssqlscan
 ncrack
-neovim
 net-snmp
 net-tools
 netdiscover
 netsniff-ng
-network-manager-applet
 networkmanager
 networkminer
 nfs-utils
@@ -198,7 +193,6 @@ phpggc
 picom
 pixiewps
 pkgfile
-plantuml
 pompem
 postgresql
 powerfuzzer
