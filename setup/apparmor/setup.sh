@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Add apparmor to kernel
-cp grub /etc/default/grub
+sudo cp grub /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # aa-notify
