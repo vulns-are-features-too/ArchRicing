@@ -22,7 +22,6 @@ beef
 bettercap
 binwalk
 blackarch/nbtscan
-blueman
 bluez
 bluez-utils
 braa
@@ -40,6 +39,7 @@ cmsmap
 commix
 conntrack-tools
 crackmapexec
+cronie
 crowbar
 crunch
 davfs2
@@ -86,6 +86,7 @@ gimp
 git
 github-cli
 gittools
+gnu-free-fonts
 gnu-netcat
 go
 gobuster
@@ -270,7 +271,6 @@ unrar
 unzip
 upx
 urlscan
-usbguard
 v3n0m
 valgrind
 vi
@@ -314,3 +314,4 @@ zbar
 zip
 zsh
 zsh-syntax-highlighting
+the_silver_searcher

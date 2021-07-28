@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ "$(systemd-detect-virt)" == "none" ] || exit
+systemd-detect-virt && exit
 
 set -e
 source ../../var.sh

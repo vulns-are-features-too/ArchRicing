@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # exist if not host
-[ "$(systemd-detect-virt)" == "none" ] || exit
+systemd-detect-virt && exit
 
 # libvirtd
 sudo groupadd libvirtd

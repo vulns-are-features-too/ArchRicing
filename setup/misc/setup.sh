@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # Downloads miscellaneous tools & wordlists
-[ $(systemd-detect-virt) == "none" ] || exit
+systemd-detect-virt && exit
 set -e
 source ../../var.sh
 
