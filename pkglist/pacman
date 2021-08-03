@@ -61,7 +61,6 @@ dotnet-sdk
 driftnet
 dsniff
 dunst
-empire
 entr
 enum4linux
 ettercap
@@ -249,8 +248,10 @@ tesseract
 tesseract-data-eng
 testssl.sh
 texlive-most
+the_silver_searcher
 theharvester
 tig
+tmux
 toilet
 torbrowser-launcher
 tplmap
@@ -314,4 +315,3 @@ zbar
 zip
 zsh
 zsh-syntax-highlighting
-the_silver_searcher
