@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # Downloads miscellaneous tools & wordlists
-systemd-detect-virt && exit
+systemd-detect-virt -q && exit
 set -e
 source ../../var.sh
 

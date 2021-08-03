@@ -55,7 +55,7 @@ install_pkg(){
 	echo -e "[START] Installing with standard package manager\n"
 
 	pkg="$(tr '\n' ' ' < "$path_to_pkgs"/pacman)"
-	 systemd-detect-virt && pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/pacman-guest)" || pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/pacman-host)"
+	 systemd-detect-virt -q && pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/pacman-guest)" || pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/pacman-host)"
 	sudo pacman -S --needed $pkg || exit 1
 
 	echo -e "[DONE] Installing with standard package manager\n"
@@ -65,7 +65,7 @@ install_aur(){
 	echo -e "[START] Installing stuff from the AUR\n"
 
 	pkg="$(tr '\n' ' ' < "$path_to_pkgs"/aur)"
-	systemd-detect-virt || pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/aur-host)"
+	systemd-detect-virt -q || pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/aur-host)"
 	yay -S $pkg || exit 1
 
 	echo -e "[DONE] Installing stuff from the AUR\n"
@@ -121,7 +121,7 @@ install_go(){
 
 download_tools(){
 
-	systemd-detect-virt && exit
+	systemd-detect-virt -q && exit
 
 	echo -e "[START] Downloading tools\n"
 
@@ -188,7 +188,7 @@ post_install(){
 	sudo systemctl enable cronie
 	sudo systemctl enable openntpd
 
-  if [ "$(systemd-detect-virt)" ]; then
+  if [ "$(systemd-detect-virt -q)" ]; then
     sudo systemctl enable libvirtd
     sudo systemctl enable syslog-ng@default
     systemctl enable --user mpd

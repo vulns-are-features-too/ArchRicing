@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-systemd-detect-virt && exit
+systemd-detect-virt -q && exit
 
 set -e
 source ../../var.sh
