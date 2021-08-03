@@ -37,12 +37,14 @@ add_repos(){
 	# Archstrike
 	echo -e "Adding Archstrike repository\n"
 	echo -e "\n[archstrike]\nServer = https://mirror.archstrike.org/\$arch/\$repo\n" | sudo tee -a /etc/pacman.conf
+  # 9D5F1C051D146843CDA4858BDE64825E7CBC0D51
+  signature=$(curl -s 'https://archstrike.org/wiki/setup' | grep -oP 'pacman-key --lsign-key [A-Z0-9]+' | cut -d' ' -f3 | head -1)
 	sudo pacman-key --init
 	sudo dirmngr < /dev/null
 	wget https://archstrike.org/keyfile.asc
 	sudo pacman-key --add keyfile.asc
 	rm keyfile.asc*
-	sudo pacman-key --lsign-key 9D5F1C051D146843CDA4858BDE64825E7CBC0D51
+	sudo pacman-key --lsign-key "$signature"
 	sudo pacman -Syy --noconfirm
 	echo -e "Finished adding Archstrike repository\n"
 

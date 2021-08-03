@@ -1,6 +1,5 @@
 aircrack-ng
 airgeddon
-thunderbird
 arachni
 arandr
 arduino
@@ -15,6 +14,7 @@ cuda
 discord
 dnsmasq
 ebtables
+edk2-ovmf
 flashrom
 fluxion
 ghidra
@@ -53,11 +53,12 @@ rclone
 reaver
 screenkey
 stegcracker
+syslog-ng
+thunderbird
 usbguard
+usbrip
 vagrant
 vde2
 virt-manager
 virtualbox
 virtualbox-host-modules-arch
-syslog-ng
-usbrip
