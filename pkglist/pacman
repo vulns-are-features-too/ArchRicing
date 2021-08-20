@@ -23,6 +23,7 @@ bettercap
 binwalk
 blackarch/nbtscan
 bluez
+bloodhound
 bluez-utils
 braa
 bridge-utils
@@ -124,7 +125,6 @@ ldeep
 leviathan
 lib32-gcc-libs
 lighttpd
-linux-exploit-suggester
 linux-lts-headers
 lshw
 lsof
@@ -140,8 +140,10 @@ massdns
 medusa
 metagoofil
 metasploit
+mingw-w64-gcc
 mitmproxy
 mlocate
+mono-tools
 moreutils
 mp3info
 mpc
@@ -198,6 +200,7 @@ powerfuzzer
 pret
 proxychains-ng
 python-pip
+r2ghidra
 radare2
 rdesktop
 rebind

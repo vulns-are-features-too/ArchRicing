@@ -1,7 +1,7 @@
 ROPGadget
-poetry
 bandit
 black
+bloodhound
 bpython
 dkimpy
 eyed3
@@ -16,6 +16,7 @@ oauth2client
 oletools
 pipenv
 pipx
+poetry
 psycopg2-binary
 pwnscripts
 pwntools

@@ -121,8 +121,6 @@ install_go(){
 
 download_tools(){
 
-	systemd-detect-virt -q && exit
-
 	echo -e "[START] Downloading tools\n"
 
 	echo "Cloning to $path_to_tools"
@@ -194,7 +192,7 @@ post_install(){
     systemctl enable --user mpd
   fi
 
-  sudo usermod -aG audit,mount,network,video jco
+  sudo usermod -aG audit,mount,network,video "$USER"
 
   chsh -s "$(which zsh)"
 

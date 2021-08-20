@@ -1,7 +1,5 @@
 #!/bin/bash
 
-systemd-detect-virt -q && exit
-
 source ../../var.sh
 
 cd $path_to_tools
