@@ -22,8 +22,8 @@ beef
 bettercap
 binwalk
 blackarch/nbtscan
-bluez
 bloodhound
+bluez
 bluez-utils
 braa
 bridge-utils
@@ -162,6 +162,7 @@ networkmanager
 networkminer
 nfs-utils
 nfsshell
+nginx
 ngrep
 ngrok
 nikto
