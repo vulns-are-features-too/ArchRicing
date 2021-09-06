@@ -3,7 +3,7 @@
 set -e
 source ../../var.sh
 
-echo -e "[START] Installing and setting up stuff for Vim\n"
+echo -e "[START] Installing and setting up stuff for Vim\n" | tee -a "$log_file"
 
 # Get nvim nightly
 wget 'https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage'
@@ -37,4 +37,4 @@ cp ./.editorconfig $path_to_vim/
 # sym-link vim to nvim
 ln -sf ~/.local/bin/nvim ~/.local/bin/vim
 
-echo -e "[DONE] Installing and setting up stuff for Vim\n"
+echo -e "[DONE] Installing and setting up stuff for Vim\n" | tee -a "$log_file"

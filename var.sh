@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 
+log_file=~/rice.log
 path_current=$(pwd)
 path_to_dotfiles="$HOME/git/dotfiles"
 path_to_pkgs="$(pwd)/pkglist"

@@ -25,7 +25,6 @@ i3lock
 iaito
 intel-compute-runtime
 kismet
-libvirt
 linux-headers
 lm_sensors
 maltego
@@ -59,6 +58,5 @@ usbguard
 usbrip
 vagrant
 vde2
-virt-manager
 virtualbox
 virtualbox-host-modules-arch

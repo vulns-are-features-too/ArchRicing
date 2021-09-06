@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "[START] Setting up git" | tee -a "$log_file"
 git config --global alias.a "add"
 git config --global alias.bs "bisect"
 git config --global alias.br "branch"
@@ -16,5 +17,5 @@ git config --global alias.sw "switch"
 git config --global alias.root "rev-parse --show-toplevel"
 git config --global credential.helper "cache"
 git config --global commit.gpgsign true
-
 gh config set git_protocol ssh
+echo "[START] Setting up git" | tee -a "$log_file"

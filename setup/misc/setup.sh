@@ -4,7 +4,8 @@
 set -e
 source ../../var.sh
 
-mkdir -p $HOME/tools/payloads || continue
+echo "[START] Setting up misc" | tee -a "$log_file"
+mkdir -p "$HOME/tools/payloads" || true
 
 cd ~/tools
 while read -r line; do
@@ -23,3 +24,4 @@ ln -sf /usr/share/john/rules/ $HOME/tools/password_cracking_rules/hashcat_rules
 ln -sf /usr/share/john/rules/ $HOME/tools/password_cracking_rules/john_rules
 
 cd $path_current
+echo "[DONE] Setting up misc" | tee -a "$log_file"
