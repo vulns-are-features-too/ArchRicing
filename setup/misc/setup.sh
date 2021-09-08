@@ -6,16 +6,17 @@ source ../../var.sh
 
 echo "[START] Setting up misc" | tee -a "$log_file"
 mkdir -p "$HOME/tools/payloads" || true
+curr=$(pwd)
 
 cd ~/tools
 while read -r line; do
 	git clone $line --depth 1
-done < tools
+done < "$curr/tools"
 
 cd payloads
 while read -r line; do
 	git clone $line
-done < payloads.txt
+done < "$curr/payloads.txt"
 
 # OneRuleToRuleThemAll
 mkdir $HOME/tools/password_cracking_rules

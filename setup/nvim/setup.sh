@@ -3,7 +3,7 @@
 set -e
 source ../../var.sh
 
-echo -e "[START] Installing and setting up stuff for Vim\n" | tee -a "$log_file"
+echo -e "[START] Installing and setting up stuff for nvim" | tee -a "$log_file"
 
 # Get nvim nightly
 wget 'https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage'
@@ -31,10 +31,7 @@ python3 -m pip install black pynvim
     -c ":TSInstall bash c cpp html java javascript json php python regex rust"
 	-c ":qa!" 2>/dev/null
 
-# vim-jsbeautify
-cp ./.editorconfig $path_to_vim/
-
 # sym-link vim to nvim
 ln -sf ~/.local/bin/nvim ~/.local/bin/vim
 
-echo -e "[DONE] Installing and setting up stuff for Vim\n" | tee -a "$log_file"
+echo -e "[DONE] Installing and setting up stuff for nvim" | tee -a "$log_file"

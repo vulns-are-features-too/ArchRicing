@@ -3,9 +3,8 @@
 set -e
 source ../../var.sh
 
-echo "[START] Setting up VMs" | tee -a "$log_file"
-# exist if not host
 systemd-detect-virt -q && exit
+echo "[START] Setting up VMs" | tee -a "$log_file"
 sudo modprobe vboxdrv
 
 #sudo cp modprobe.conf /etc/modprobe.d/

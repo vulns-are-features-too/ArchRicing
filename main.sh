@@ -184,7 +184,6 @@ post_install(){
 	sudo systemctl enable apparmor
 	sudo systemctl enable bluetooth
 	sudo systemctl enable cronie
-	sudo systemctl enable openntpd
 
   if [ "$(systemd-detect-virt -q)" ]; then
     sudo systemctl enable syslog-ng@default
