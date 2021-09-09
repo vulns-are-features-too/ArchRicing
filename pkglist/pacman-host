@@ -59,4 +59,5 @@ usbrip
 vagrant
 vde2
 virtualbox
+virtualbox-guest-iso
 virtualbox-host-modules-arch
