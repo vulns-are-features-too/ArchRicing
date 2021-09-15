@@ -119,6 +119,14 @@ install_go(){
 	echo -e "[DONE] Installing go tools\n" | tee -a "$log_file"
 }
 
+install_ruby(){
+	echo -e "[START] Installing ruby tools\n" | tee -a "$log_file"
+
+  gem install $(tr '\n' ' ' < $path_to_pkgs/ruby)
+
+	echo -e "[DONE] Installing ruby tools\n" | tee -a "$log_file"
+}
+
 download_tools(){
 
 	echo -e "[START] Downloading tools\n" | tee -a "$log_file"

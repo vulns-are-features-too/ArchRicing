@@ -36,6 +36,7 @@ checksec
 chromium
 clamav
 clipmenu
+cmake
 cmsmap
 commix
 conntrack-tools

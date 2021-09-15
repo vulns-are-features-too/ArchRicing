@@ -1,4 +1,5 @@
 https://github.com/AonCyberLabs/Windows-Exploit-Suggester
+https://github.com/BC-SECURITY/Empire
 https://github.com/InteliSecureLabs/Linux_Exploit_Suggester
 https://github.com/PowerShellMafia/PowerSploit
 https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite
