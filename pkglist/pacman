@@ -104,6 +104,7 @@ hostapd
 hostapd-wpe
 hping
 htop
+httpie
 hub
 hydra
 impacket
@@ -119,6 +120,7 @@ john
 jq
 jre11-openjdk
 jre8-openjdk
+jwt-tool
 jython
 kerbrute
 ldapdomaindump
@@ -316,6 +318,7 @@ zaproxy
 zathura
 zathura-pdf-mupdf
 zbar
+zeek
 zip
 zsh
 zsh-syntax-highlighting

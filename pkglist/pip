@@ -33,4 +33,5 @@ scapy
 scipy
 scrapy
 shodan
+truffleHog
 volatility3
