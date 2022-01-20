@@ -37,8 +37,8 @@ add_repos(){
 	# Archstrike
 	echo -e "Adding Archstrike repository\n" | tee -a "$log_file"
 	echo -e "\n[archstrike]\nServer = https://mirror.archstrike.org/\$arch/\$repo\n" | sudo tee -a /etc/pacman.conf
-  # 9D5F1C051D146843CDA4858BDE64825E7CBC0D51
-  signature=$(curl -s 'https://archstrike.org/wiki/setup' | grep -oP 'pacman-key --lsign-key [A-Z0-9]+' | cut -d' ' -f3 | head -1)
+	# 9D5F1C051D146843CDA4858BDE64825E7CBC0D51
+	signature=$(curl -s 'https://archstrike.org/wiki/setup' | grep -oP 'pacman-key --lsign-key [A-Z0-9]+' | cut -d' ' -f3 | head -1)
 	sudo pacman-key --init
 	sudo dirmngr < /dev/null
 	wget https://archstrike.org/keyfile.asc
@@ -56,7 +56,7 @@ install_pkg(){
 
 	pkg="$(tr '\n' ' ' < "$path_to_pkgs"/pacman)"
 	 systemd-detect-virt -q && pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/pacman-guest)" || pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/pacman-host)"
-	sudo pacman -S --needed $pkg || exit 1
+	sudo pacman -S --needed --noconfirm $pkg || exit 1
 
 	echo -e "[DONE] Installing with standard package manager\n" | tee -a "$log_file"
 }
@@ -74,7 +74,7 @@ install_aur(){
 install_pip(){
 	echo -e "[START] Installing python modules\n" | tee -a "$log_file"
 
-	pip3 install -r "$path_to_pkgs/pip" || exit 1
+	pip3 install --user -r "$path_to_pkgs/pip" || exit 1
 	while read -r line; do
 		python3 -m pipx install "$line"
 	done < $path_to_pkgs/pipx
@@ -98,7 +98,7 @@ install_rust(){
 
 	# Install rustup
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-  source ~/.cargo/env
+	source ~/.cargo/env
 
 	# Rust Language Server
 	rustup component add rls rust-analysis rust-src
@@ -113,8 +113,8 @@ install_rust(){
 install_go(){
 	echo -e "[START] Installing go tools\n" | tee -a "$log_file"
 
-  go env -w GO111MODULE=on
-  xargs -I pkg go get -u "pkg" < "$path_to_pkgs/go"
+	go env -w GO111MODULE=on
+	xargs -I pkg go get -u "pkg" < "$path_to_pkgs/go"
 
 	echo -e "[DONE] Installing go tools\n" | tee -a "$log_file"
 }
@@ -122,7 +122,7 @@ install_go(){
 install_ruby(){
 	echo -e "[START] Installing ruby tools\n" | tee -a "$log_file"
 
-  gem install $(tr '\n' ' ' < $path_to_pkgs/ruby)
+	gem install $(tr '\n' ' ' < $path_to_pkgs/ruby)
 
 	echo -e "[DONE] Installing ruby tools\n" | tee -a "$log_file"
 }
@@ -179,7 +179,7 @@ misc(){
 
 	# allow acpilight's xbacklight to control brightness without sudo
 	sudo cp ./misc/backlight.rules /etc/udev/rules.d/
-  sudo usermod -aG video "$USER"
+	sudo usermod -aG video "$USER"
 }
 
 post_install(){
@@ -193,14 +193,14 @@ post_install(){
 	sudo systemctl enable bluetooth
 	sudo systemctl enable cronie
 
-  if [ "$(systemd-detect-virt -q)" ]; then
-    sudo systemctl enable syslog-ng@default
-    systemctl enable --user mpd
-  fi
+	if [ "$(systemd-detect-virt -q)" ]; then
+		sudo systemctl enable syslog-ng@default
+		systemctl enable --user mpd
+	fi
 
-  sudo usermod -aG audit,mount,network,video "$USER"
+	sudo usermod -aG audit,mount,network,video "$USER"
 
-  chsh -s "$(which zsh)"
+	chsh -s "$(which zsh)"
 
 	echo -e "[DONE] Post-installtion\n" | tee -a "$log_file"
 }
