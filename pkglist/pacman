@@ -18,6 +18,7 @@ avahi
 aws-cli
 bandit
 bashtop
+bat
 bbqsql
 beef
 bettercap
@@ -72,6 +73,7 @@ ettercap
 evil-winrm
 exploitdb
 eyewitness
+fd
 fernflower
 ffmpeg
 ffuf
@@ -240,8 +242,10 @@ rebind
 recon-ng
 remmina
 responder
+ripgrep
 rlwrap
 ropgadget
+rustscan
 samba
 scalpel
 scrapy
@@ -272,6 +276,7 @@ sshuttle
 sslscan
 sslstrip
 sslyze
+starship
 steghide
 stegsolve
 strace
