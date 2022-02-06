@@ -180,6 +180,9 @@ misc(){
 	# allow acpilight's xbacklight to control brightness without sudo
 	sudo cp ./misc/backlight.rules /etc/udev/rules.d/
 	sudo usermod -aG video "$USER"
+
+  sudo cp ./misc/powertop.service /etc/systemd/system/
+  sudo cp ./misc/audio_powersave.conf /etc/modprobe.d/
 }
 
 post_install(){
@@ -192,6 +195,8 @@ post_install(){
 	sudo systemctl enable apparmor
 	sudo systemctl enable bluetooth
 	sudo systemctl enable cronie
+  sudo systemctl disable NetworkManager-wait-online.service
+  sudo systemctl enable powertop.service
 
 	if [ "$(systemd-detect-virt -q)" ]; then
 		sudo systemctl enable syslog-ng@default

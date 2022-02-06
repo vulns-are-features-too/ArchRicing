@@ -17,7 +17,6 @@ autorecon
 avahi
 aws-cli
 bandit
-bashtop
 bat
 bbqsql
 beef
@@ -32,6 +31,7 @@ bpython
 braa
 bridge-utils
 bspwm
+btop
 burpsuite
 calcurse
 cewl
@@ -114,6 +114,7 @@ httpie
 hub
 hydra
 impacket
+inotify-tools
 iodine
 ipmitool
 ipscan
@@ -129,6 +130,7 @@ jre8-openjdk
 jwt-tool
 jython
 kerbrute
+kiterunner
 ldapdomaindump
 ldeep
 leviathan
@@ -177,6 +179,7 @@ ngrep
 ngrok
 nikto
 nmap
+nosqlmap
 npm
 nuget
 numlockx
@@ -209,6 +212,7 @@ postgresql
 powerfuzzer
 pret
 proxychains-ng
+pwncat-caleb
 python-black
 python-crypto
 python-dkim

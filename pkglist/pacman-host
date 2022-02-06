@@ -41,6 +41,7 @@ newsboat
 nvtop
 pavucontrol
 plantuml
+powertop
 pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
@@ -49,12 +50,17 @@ pycuda-headers
 pyrit
 python-pycuda
 qemu
+qmk
 rclone
 reaver
 screenkey
 stegcracker
 syslog-ng
+teensy-loader-cli
 thunderbird
+tlp
+tlp-rdw
+unoconv
 usbguard
 usbrip
 vagrant
