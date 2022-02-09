@@ -1,8 +1,6 @@
-acpilight
 ad-ldap-enum
 adobe-source-han-sans-jp-fonts
 adobe-source-han-serif-jp-fonts
-alacritty
 amass
 android-apktool
 apparmor
@@ -17,7 +15,6 @@ autorecon
 avahi
 aws-cli
 bandit
-bat
 bbqsql
 beef
 bettercap
@@ -30,8 +27,6 @@ bluez-utils
 bpython
 braa
 bridge-utils
-bspwm
-btop
 burpsuite
 calcurse
 cewl
@@ -39,13 +34,10 @@ chankro
 checksec
 chromium
 clamav
-clipmenu
-cmake
 cmsmap
 commix
 conntrack-tools
 crackmapexec
-cronie
 crowbar
 crunch
 davfs2
@@ -53,7 +45,6 @@ davscan
 davtest
 db
 dex2jar
-dmenu
 dmitry
 dnschef
 dnsenum
@@ -66,7 +57,6 @@ dotnet-host
 dotnet-sdk
 driftnet
 dsniff
-dunst
 entr
 enum4linux
 ettercap
@@ -80,9 +70,6 @@ ffuf
 fierce
 fimap
 finalrecon
-firefox
-firefox-tridactyl
-firejail
 flameshot
 foremost
 fping
@@ -90,12 +77,9 @@ freerdp
 fzf
 gdb
 gimp
-git
-github-cli
 gittools
 gnu-free-fonts
 gnu-netcat
-go
 gobuster
 golismero
 gospider
@@ -109,7 +93,6 @@ highlight
 hostapd
 hostapd-wpe
 hping
-htop
 httpie
 hub
 hydra
@@ -143,7 +126,6 @@ ltrace
 lxd
 macchanger
 maim
-make
 man-db
 mariadb-clients
 masscan
@@ -157,9 +139,6 @@ mlocate
 mono-tools
 moreutils
 mp3info
-mpc
-mpd
-mpv
 msf-mpc
 msfdb
 msfenum
@@ -167,10 +146,8 @@ mssqlscan
 mypy
 ncrack
 net-snmp
-net-tools
 netdiscover
 netsniff-ng
-networkmanager
 networkminer
 nfs-utils
 nfsshell
@@ -180,7 +157,6 @@ ngrok
 nikto
 nmap
 nosqlmap
-npm
 nuget
 numlockx
 oledump
@@ -287,8 +263,6 @@ strace
 subbrute
 subfinder
 subscraper
-sxhkd
-sxiv
 tcpflow
 termshark
 tesseract
@@ -303,7 +277,6 @@ toilet
 torbrowser-launcher
 tplmap
 traceroute
-transmission-cli
 tree
 tree-sitter
 trufflehog
@@ -322,9 +295,6 @@ upx
 urlscan
 v3n0m
 valgrind
-vi
-vifm
-vim
 volatility3
 w3af
 wapiti
@@ -337,19 +307,9 @@ wireshark-qt
 wmname
 wpscan
 xautomation
-xclip
 xdo
 xdotool
 xmlstarlet
-xorg-server
-xorg-xdpyinfo
-xorg-xhost
-xorg-xinit
-xorg-xkill
-xorg-xprop
-xorg-xrandr
-xorg-xset
-xorg-xwininfo
 xsser
 xsstrike
 xterm
@@ -362,6 +322,3 @@ zathura
 zathura-pdf-mupdf
 zbar
 zeek
-zip
-zsh
-zsh-syntax-highlighting

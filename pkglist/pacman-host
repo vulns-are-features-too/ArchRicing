@@ -6,12 +6,12 @@ arduino
 arduino-avr-core
 arduino-cli
 armitage
-bloodhound
 blueman
 bully
 ctags
 cuda
 discord
+dmidecode
 dnsmasq
 ebtables
 edk2-ovmf

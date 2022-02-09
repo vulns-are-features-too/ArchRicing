@@ -51,6 +51,15 @@ add_repos(){
 	echo -e "[DONE] Installing repositories\n" | tee -a "$log_file"
 }
 
+install_pkg_min(){
+	echo -e "[START] Installing with minimal packages\n" | tee -a "$log_file"
+
+	pkg="$(tr '\n' ' ' < "$path_to_pkgs"/pacman-min)"
+	sudo pacman -S --needed --noconfirm $pkg || exit 1
+
+	echo -e "[DONE] Installing minimal packages \n" | tee -a "$log_file"
+}
+
 install_pkg(){
 	echo -e "[START] Installing with standard package manager\n" | tee -a "$log_file"
 
