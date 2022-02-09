@@ -1,5 +1,6 @@
 acpilight
 alacritty
+apparmor
 bat
 bspwm
 btop
@@ -21,6 +22,10 @@ mpv
 net-tools
 networkmanager
 npm
+python-pip
+python-pipenv
+python-pipx
+python-requests
 sxhkd
 sxiv
 transmission-cli
@@ -37,6 +42,7 @@ xorg-xprop
 xorg-xrandr
 xorg-xset
 xorg-xwininfo
+yay
 zip
 zsh
 zsh-syntax-highlighting

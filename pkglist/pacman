@@ -3,7 +3,6 @@ adobe-source-han-sans-jp-fonts
 adobe-source-han-serif-jp-fonts
 amass
 android-apktool
-apparmor
 aquatone
 arjun
 arp-scan
@@ -199,9 +198,6 @@ python-mysqlclient
 python-numpy
 python-oauth2client
 python-oletools
-python-pip
-python-pipenv
-python-pipx
 python-poetry
 python-psycopg2
 python-pwntools
@@ -210,7 +206,6 @@ python-pylint
 python-pynvim
 python-pysqlcipher3
 python-pytest
-python-requests
 python-ropper
 python-scapy
 python-scipy
@@ -314,7 +309,6 @@ xsser
 xsstrike
 xterm
 xxeinjector
-yay
 yersinia
 youtube-dl
 zaproxy
