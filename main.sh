@@ -229,6 +229,7 @@ echo -e "Running install and setup\n"
 
 #pre_install
 #add_repos
+#install_pkg_min
 #install_pkg
 #install_aur
 #install_pip
