@@ -26,6 +26,7 @@ python-pip
 python-pipenv
 python-pipx
 python-requests
+rclone
 sxhkd
 sxiv
 transmission-cli
