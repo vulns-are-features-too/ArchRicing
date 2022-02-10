@@ -118,7 +118,6 @@ ldeep
 leviathan
 lib32-gcc-libs
 lighttpd
-linux-lts-headers
 lshw
 lsof
 ltrace
@@ -204,7 +203,6 @@ python-pwntools
 python-pycryptodome
 python-pylint
 python-pynvim
-python-pysqlcipher3
 python-pytest
 python-ropper
 python-scapy
