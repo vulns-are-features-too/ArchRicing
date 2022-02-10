@@ -55,7 +55,7 @@ install_pkg_min(){
 	echo -e "[START] Installing with minimal packages\n" | tee -a "$log_file"
 
 	pkg="$(tr '\n' ' ' < "$path_to_pkgs"/pacman-min)"
-	sudo pacman -S --needed --noconfirm $pkg || exit 1
+	sudo pacman -S --needed $pkg || exit 1
 
 	echo -e "[DONE] Installing minimal packages \n" | tee -a "$log_file"
 }
@@ -65,7 +65,7 @@ install_pkg(){
 
 	pkg="$(tr '\n' ' ' < "$path_to_pkgs"/pacman)"
 	 systemd-detect-virt -q && pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/pacman-guest)" || pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/pacman-host)"
-	sudo pacman -S --needed --noconfirm $pkg || exit 1
+	sudo pacman -S --needed $pkg || exit 1
 
 	echo -e "[DONE] Installing with standard package manager\n" | tee -a "$log_file"
 }
