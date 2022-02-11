@@ -173,8 +173,10 @@ misc(){
 	sudo cp ./misc/backlight.rules /etc/udev/rules.d/
 	sudo usermod -aG video "$USER"
 
-  sudo cp ./misc/powertop.service /etc/systemd/system/
-  sudo cp ./misc/audio_powersave.conf /etc/modprobe.d/
+	if [ "$(systemd-detect-virt -q)" ]; then
+    sudo cp ./misc/powertop.service /etc/systemd/system/
+    sudo cp ./misc/audio_powersave.conf /etc/modprobe.d/
+  fi
 }
 
 post_install(){
