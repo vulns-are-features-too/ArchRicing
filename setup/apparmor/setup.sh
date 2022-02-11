@@ -4,9 +4,6 @@ set -e
 source ../../var.sh
 
 echo "[START] Setting up apparmor" | tee -a "$log_file"
-# Add apparmor to kernel
-sudo cp grub /etc/default/grub
-sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # aa-notify
 sudo groupadd -r audit

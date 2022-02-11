@@ -1,4 +1,5 @@
 #!/bin/bash
+source ../../var.sh
 
 echo "[START] Setting up mount" | tee -a "$log_file"
 sudo groupadd mount

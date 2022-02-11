@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ../../var.sh
+
 echo "[START] Setting up git" | tee -a "$log_file"
 git config --global alias.a "add"
 git config --global alias.bs "bisect"

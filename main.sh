@@ -58,12 +58,30 @@ install_pkg_min(){
 	echo -e "[DONE] Installing minimal packages \n" | tee -a "$log_file"
 }
 
+dotfiles(){
+	echo -e "[START] Installing dot files\n" | tee -a "$log_file"
+
+	[ -d "$HOME/git/dotfiles" ] || git clone "$url_to_dotfiles" "$path_to_dotfiles"
+
+	for line in "$path_to_dotfiles"/home/.*; do
+		target="$(echo "$line" | cut -d \/ -f 7)"
+		[ "$target" != "." ] && [ "$target" != ".." ] && ln -sf $line "$HOME/$target"
+	done || exit 1
+
+	for line in "$path_to_dotfiles"/config/*; do
+		target="$(echo $line | cut -d \/ -f 7)"
+		ln -sf "$line" "$HOME/.config/$target"
+	done || exit 1
+
+	echo -e "[DONE] Installing dot files\n" | tee -a "$log_file"
+}
+
 install_pkg(){
 	echo -e "[START] Installing with standard package manager\n" | tee -a "$log_file"
 
 	pkg="$(tr '\n' ' ' < "$path_to_pkgs"/pacman)"
 	 systemd-detect-virt -q && pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/pacman-guest)" || pkg="$pkg $(tr '\n' ' ' < "$path_to_pkgs"/pacman-host)"
-	sudo pacman -S --needed $pkg || exit 1
+	sudo pacman -S --needed --disable-download-timeout $pkg || exit 1
 
 	echo -e "[DONE] Installing with standard package manager\n" | tee -a "$log_file"
 }
@@ -134,39 +152,6 @@ install_ruby(){
 	echo -e "[DONE] Installing ruby tools\n" | tee -a "$log_file"
 }
 
-download_tools(){
-
-	echo -e "[START] Downloading tools\n" | tee -a "$log_file"
-
-	echo "Cloning to $path_to_tools"
-	cd "$path_to_tools"
-	while IFS= read -r line; do
-		git clone "$line" || echo "$line already exists"
-	done < "$path_to_pkgs/gitclone"
-
-	cd "$path_current"
-
-	echo -e "[DONE] Downloading tools\n" | tee -a "$log_file"
-}
-
-dotfiles(){
-	echo -e "[START] Installing dot files\n" | tee -a "$log_file"
-
-	[ -d "$HOME/git/dotfiles" ] || git clone "$url_to_dotfiles" "$path_to_dotfiles"
-
-	for line in "$path_to_dotfiles"/home/.*; do
-		target="$(echo "$line" | cut -d \/ -f 7)"
-		[ "$target" != "." ] && [ "$target" != ".." ] && ln -sf $line "$HOME/$target"
-	done || exit 1
-
-	for line in "$path_to_dotfiles"/config/*; do
-		target="$(echo $line | cut -d \/ -f 7)"
-		ln -sf "$line" "$HOME/.config/$target"
-	done || exit 1
-
-	echo -e "[DONE] Installing dot files\n" | tee -a "$log_file"
-}
-
 setup(){
 	echo -e "[START] Setting up tools\n" | tee -a "$log_file"
 
@@ -212,7 +197,7 @@ post_install(){
 
 	sudo usermod -aG audit,mount,network,video "$USER"
 
-	chsh -s "$(which zsh)"
+	[ "$SHELL" = "/usr/bin/zsh" ] || chsh -s "$(which zsh)"
 
 	echo -e "[DONE] Post-installtion\n" | tee -a "$log_file"
 }
@@ -228,14 +213,13 @@ echo -e "Running install and setup\n"
 #pre_install
 #add_repos
 #install_pkg_min
+#dotfiles
 #install_pkg
 #install_aur
 #install_pip
 #install_npm
 #install_rust
 #install_go
-#download_tools
-#dotfiles
 #setup
 #misc
 #post_install
