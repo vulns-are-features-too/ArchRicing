@@ -1,7 +1,6 @@
 #!/usr/bin/bash
 
 # Downloads miscellaneous tools & wordlists
-set -e
 source ../../var.sh
 
 echo "[START] Setting up misc" | tee -a "$log_file"
@@ -11,7 +10,7 @@ curr=$(pwd)
 cd ~/tools
 while read -r line; do
 	git clone $line --depth 1
-done < "$curr/tools"
+done < "$curr/tools.txt"
 
 cd payloads
 while read -r line; do

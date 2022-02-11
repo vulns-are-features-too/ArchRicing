@@ -18,9 +18,6 @@ sudo pacman -S --needed --noconfirm vim-runtime
 # Install vim-plug
 curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > $path_to_vim/autoload/plug.vim
 
-# Dependencies
-python3 -m pip install black pynvim
-
 # Install all the plugins
 ~/.local/bin/nvim --cmd ":source $path_to_vim/init.vim" \
 	-c ":PlugInstall" \

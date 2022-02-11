@@ -12,8 +12,6 @@ source var.sh
 # Declare functions
 ##############################
 
-echo -e "Setting up functions\n"
-
 pre_install(){
 	echo -e "[START] Preprocessing\n" | tee -a "$log_file"
 
@@ -52,7 +50,7 @@ add_repos(){
 }
 
 install_pkg_min(){
-	echo -e "[START] Installing with minimal packages\n" | tee -a "$log_file"
+	echo -e "[START] Installing minimal packages\n" | tee -a "$log_file"
 
 	pkg="$(tr '\n' ' ' < "$path_to_pkgs"/pacman-min)"
 	sudo pacman -S --needed $pkg || exit 1
@@ -143,7 +141,7 @@ download_tools(){
 	echo "Cloning to $path_to_tools"
 	cd "$path_to_tools"
 	while IFS= read -r line; do
-		git clone "$line"
+		git clone "$line" || echo "$line already exists"
 	done < "$path_to_pkgs/gitclone"
 
 	cd "$path_current"
