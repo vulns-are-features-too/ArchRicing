@@ -13,3 +13,7 @@ then run
 ```sh
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
+
+## Burp Suite
+
+Install plugins in `pkglist/burpsuite`.

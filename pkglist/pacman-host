@@ -7,8 +7,6 @@ arduino-avr-core
 arduino-cli
 armitage
 blueman
-bully
-ctags
 cuda
 discord
 dmidecode
@@ -16,11 +14,9 @@ dnsmasq
 ebtables
 edk2-ovmf
 flashrom
-fluxion
 ghidra
 git-lfs
 gocryptfs
-gparted
 hashcat
 i3lock
 iaito
@@ -31,11 +27,8 @@ lm_sensors
 maltego
 mariadb
 maven
-mdk3
-mdk4
 minicom
 ncmpcpp
-neomutt
 network-manager-applet
 newsboat
 nvtop
@@ -49,7 +42,6 @@ pulsemixer
 pycuda-headers
 pyrit
 python-pycuda
-qemu
 qmk
 rclone
 reaver
@@ -58,8 +50,6 @@ stegcracker
 syslog-ng
 teensy-loader-cli
 thunderbird
-tlp
-tlp-rdw
 unoconv
 usbguard
 usbrip

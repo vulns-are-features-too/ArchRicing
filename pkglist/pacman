@@ -1,11 +1,11 @@
 ad-ldap-enum
-avahi
 adobe-source-han-sans-jp-fonts
 adobe-source-han-serif-jp-fonts
 amass
 arp-scan
 audacity
 autopsy
+avahi
 aws-cli
 bandit
 beef
@@ -31,6 +31,7 @@ conntrack-tools
 crackmapexec
 crowbar
 crunch
+ctags
 davfs2
 davscan
 davtest
@@ -253,7 +254,7 @@ xdo
 xdotool
 xmlstarlet
 xterm
-youtube-dl
+yt-dlp
 zaproxy
 zathura
 zathura-pdf-mupdf

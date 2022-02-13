@@ -182,6 +182,11 @@ misc(){
 post_install(){
 	echo -e "[START] Post-installtion\n" | tee -a "$log_file"
 
+  # create some directories
+  mkdir -p \
+    ~/{Desktop,Downloads,Videos} \
+    ~/torrents/{downloads,incomplete,torrents}
+
 	echo "updatedb"
 	sudo updatedb
 
@@ -193,6 +198,7 @@ post_install(){
   sudo systemctl enable powertop.service
 
 	if [ "$(systemd-detect-virt -q)" ]; then
+    sudo systemctl enable auto-cpufreq
 		sudo systemctl enable syslog-ng@default
 		systemctl enable --user mpd
 	fi
