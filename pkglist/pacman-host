@@ -38,7 +38,6 @@ powertop
 pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
-pulsemixer
 pycuda-headers
 pyrit
 python-pycuda

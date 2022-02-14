@@ -139,7 +139,7 @@ install_go(){
 	echo -e "[START] Installing go tools\n" | tee -a "$log_file"
 
 	go env -w GO111MODULE=on
-	xargs -I pkg go get -u "pkg" < "$path_to_pkgs/go"
+	xargs -I pkg go install "pkg" < "$path_to_pkgs/go"
 
 	echo -e "[DONE] Installing go tools\n" | tee -a "$log_file"
 }
@@ -185,7 +185,8 @@ post_install(){
   # create some directories
   mkdir -p \
     ~/{Desktop,Downloads,Videos} \
-    ~/torrents/{downloads,incomplete,torrents}
+    ~/torrents/{downloads,incomplete,torrents} \
+    ~/Pictures/screenshots
 
 	echo "updatedb"
 	sudo updatedb
