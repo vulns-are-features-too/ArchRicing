@@ -121,9 +121,7 @@ install_npm(){
 install_rust(){
 	echo -e "[START] Installing rust tools\n" | tee -a "$log_file"
 
-	# Install rustup
-	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-	source ~/.cargo/env
+  rustup default stable
 
 	# Rust Language Server
 	rustup component add rls rust-analysis rust-src
@@ -185,7 +183,7 @@ post_install(){
   # create some directories
   mkdir -p \
     ~/{Desktop,Downloads,Videos} \
-    ~/torrents/{downloads,incomplete,torrents} \
+    ~/torrents/{downloads,incomplete,seeds,torrents} \
     ~/Pictures/screenshots
 
 	echo "updatedb"

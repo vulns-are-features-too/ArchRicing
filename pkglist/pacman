@@ -4,12 +4,12 @@ adobe-source-han-serif-jp-fonts
 amass
 arp-scan
 audacity
-autopsy
 avahi
 aws-cli
 bandit
 beef
 bettercap
+bind
 binwalk
 blackarch/nbtscan
 bloodhound
@@ -20,7 +20,6 @@ bpython
 braa
 bridge-utils
 burpsuite
-calcurse
 cewl
 chankro
 checksec
@@ -53,7 +52,6 @@ fd
 ffmpeg
 ffuf
 flameshot
-foremost
 fping
 freerdp
 fzf
@@ -105,6 +103,7 @@ man-db
 mariadb-clients
 masscan
 massdns
+maven
 medusa
 metasploit
 mingw-w64-gcc
@@ -121,7 +120,6 @@ mypy
 net-snmp
 netdiscover
 netsniff-ng
-networkminer
 nfs-utils
 nfsshell
 nginx
@@ -136,7 +134,6 @@ oledump
 openldap
 openocd
 openssh
-openstego
 p0f
 p7zip
 pandoc
@@ -213,8 +210,6 @@ sslscan
 sslstrip
 sslyze
 starship
-steghide
-stegsolve
 strace
 tcpflow
 termshark

@@ -7,6 +7,7 @@ arduino-avr-core
 arduino-cli
 armitage
 blueman
+calcurse
 cuda
 discord
 dmidecode
@@ -26,7 +27,6 @@ linux-headers
 lm_sensors
 maltego
 mariadb
-maven
 minicom
 ncmpcpp
 network-manager-applet
