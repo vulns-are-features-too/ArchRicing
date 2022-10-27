@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # Downloads miscellaneous tools & wordlists
 source ../../var.sh

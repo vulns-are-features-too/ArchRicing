@@ -17,3 +17,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ## Burp Suite
 
 Install plugins in `pkglist/burpsuite`.
+
+## Firefox
+
+Install `pref.js` from dotfiles

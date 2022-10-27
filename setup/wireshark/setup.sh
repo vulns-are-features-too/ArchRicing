@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 source ../../var.sh
 
 echo "[START] Setting up wireshark" | tee -a "$log_file"

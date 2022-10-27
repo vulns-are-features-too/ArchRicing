@@ -1,3 +1,6 @@
+jedi
+mycli
 pyre-check
+python-lsp-server
 pytype
 safety

@@ -1,2 +1,6 @@
 @bitwarden/cli
+bash-language-server
 neovim
+sql-language-server
+vim-language-server
+vscode-langservers-extracted

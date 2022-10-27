@@ -5,7 +5,6 @@ arandr
 arduino
 arduino-avr-core
 arduino-cli
-armitage
 blueman
 calcurse
 cuda
@@ -13,8 +12,6 @@ discord
 dmidecode
 dnsmasq
 ebtables
-edk2-ovmf
-flashrom
 ghidra
 git-lfs
 gocryptfs
@@ -27,7 +24,6 @@ linux-headers
 lm_sensors
 maltego
 mariadb
-minicom
 ncmpcpp
 network-manager-applet
 newsboat
@@ -49,10 +45,11 @@ stegcracker
 syslog-ng
 teensy-loader-cli
 thunderbird
+transmission-cli
 unoconv
 usbguard
 usbrip
 vagrant
-vde2
 virtualbox
 virtualbox-guest-iso
+xss-lock

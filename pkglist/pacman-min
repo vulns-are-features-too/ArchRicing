@@ -30,7 +30,6 @@ rclone
 rustup
 sxhkd
 sxiv
-transmission-cli
 unzip
 vi
 vifm
@@ -45,6 +44,7 @@ xorg-xprop
 xorg-xrandr
 xorg-xset
 xorg-xwininfo
+yarn
 yay
 zip
 zsh
