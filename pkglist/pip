@@ -1,6 +1,7 @@
+eyed3
 jedi
 mycli
 pyre-check
-python-lsp-server
 pytype
 safety
+unidecode

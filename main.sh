@@ -43,6 +43,7 @@ add_repos() {
   wget https://archstrike.org/keyfile.asc
   sudo pacman-key --add keyfile.asc
   rm keyfile.asc
+  sudo pacman -Sy
   sudo pacman-key --lsign-key "$signature"
   sudo pacman -S archstrike-keyring archstrike-mirrorlist
   sudo sed -i 's|Server = https://mirror.archstrike.org/$arch/$repo|Include = /etc/pacman.d/archstrike-mirrorlist|' /etc/pacman.conf
@@ -55,8 +56,7 @@ add_repos() {
 install_pkg_min() {
   echo -e "[START] Installing minimal packages\n" | tee -a "$log_file"
 
-  readarray -t pkgs < "$path_to_pkgs/pacman-min"
-  sudo pacman -S --needed "${pkgs[@]}" || exit 1
+  sudo pacman -S --needed - < "$path_to_pkgs/pacman-min" || exit 1
 
   echo -e "[DONE] Installing minimal packages \n" | tee -a "$log_file"
 }
@@ -64,7 +64,7 @@ install_pkg_min() {
 dotfiles() {
   echo -e "[START] Installing dot files\n" | tee -a "$log_file"
 
-  [ -d "$path_to_dotfiles" ] || git clone --depth 1 "$url_to_dotfiles" "$path_to_dotfiles"
+  [ -d "$path_to_dotfiles" ] || git clone --depth 1 --recurse-submodules "$url_to_dotfiles" "$path_to_dotfiles"
   [ -d "$path_to_scripts" ] || git clone --depth 1 "$url_to_scripts" "$path_to_scripts"
 
   for line in "$path_to_dotfiles"/home/.*; do
@@ -85,8 +85,7 @@ install_pkg() {
 
   files=("$path_to_pkgs/pacman")
   systemd-detect-virt -q && files+=("$path_to_pkgs/pacman-guest") || files+=("$path_to_pkgs/pacman-guest")
-  readarray -t pkgs <<< "$(cat "${pkgs[@]}")"
-  sudo pacman -S --needed --disable-download-timeout "${pkgs[@]}" || exit 1
+  cat "${files[@]}" | sudo pacman -S --needed --disable-download-timeout - || exit 1
 
   echo -e "[DONE] Installing with standard package manager\n" | tee -a "$log_file"
 }
@@ -96,7 +95,7 @@ install_aur() {
 
   files=("$path_to_pkgs/aur")
   systemd-detect-virt -q || files+=("$path_to_pkgs/aur")
-  readarray -t pkgs <<< "$(cat "${pkgs[@]}")"
+  readarray -t pkgs <<< "$(cat "${files[@]}")"
   yay -Sa --needed "${pkgs[@]}" || exit 1
 
   echo -e "[DONE] Installing stuff from the AUR\n" | tee -a "$log_file"
@@ -130,7 +129,7 @@ install_rust() {
   rustup default stable
 
   # Rust Language Server
-  rustup component add rls rust-analysis rust-src
+  rustup component add clippy docs fmt rust-analysis rust-src
 
   cargo install cargo-audit --features=fix
   cargo install cargo-update
@@ -147,15 +146,6 @@ install_go() {
   xargs -I pkg go install "pkg" < "$path_to_pkgs/go"
 
   echo -e "[DONE] Installing go tools\n" | tee -a "$log_file"
-}
-
-install_yarn() {
-  echo -e "[START] Installing stuff with yarn\n" | tee -a "$log_file"
-
-  readarray -t pkgs < "$path_to_pkgs/yarn"
-  yarn global add "${pkgs[@]}"
-
-  echo -e "[DONE] Installing stuff with yarn\n" | tee -a "$log_file"
 }
 
 install_ruby() {
@@ -212,6 +202,7 @@ post_install() {
   sudo systemctl enable bluetooth
   sudo systemctl enable cronie
   sudo systemctl disable NetworkManager-wait-online.service
+  systemctl --user enable pueued.service
   #sudo systemctl enable powertop.service
 
   if [ "$(systemd-detect-virt -q)" ]; then

@@ -26,6 +26,7 @@ checksec
 chromium
 cmsmap
 commix
+composer
 conntrack-tools
 crackmapexec
 crowbar
@@ -44,10 +45,12 @@ dotnet-sdk
 dsniff
 entr
 enum4linux
+eslint
 evil-winrm
 exa
 exploitdb
 fd
+feroxbuster
 ffmpeg
 ffuf
 flameshot
@@ -55,6 +58,8 @@ fping
 freerdp
 fzf
 gdb
+ghc
+ghc-static
 gimp
 git-delta
 gittools
@@ -66,6 +71,7 @@ hash-buster
 hashcat-utils
 hashid
 hashtag
+haskell-base-prelude
 hexedit
 highlight
 hostapd
@@ -96,11 +102,10 @@ ldeep
 lesspipe
 lib32-gcc-libs
 lighttpd
-lldb
 lshw
 lsof
 ltrace
-lua-language-server
+luarocks
 lxd
 macchanger
 maim
@@ -111,6 +116,7 @@ masscan
 massdns
 maven
 medusa
+meson
 metasploit
 mingw-w64-gcc
 mitmproxy
@@ -160,12 +166,12 @@ postgresql
 pret
 prettier
 proxychains-ng
+pueue
 pulsemixer
 pwncat-caleb
 python-black
 python-crypto
 python-dkim
-python-eyed3
 python-httplib2
 python-mysqlclient
 python-numpy
@@ -179,6 +185,7 @@ python-pynvim
 python-pytest
 python-scapy
 r2ghidra
+radamsa
 radare2
 rdesktop
 rebind
@@ -217,6 +224,7 @@ sslstrip
 sslyze
 starship
 strace
+stylish-haskell
 stylua
 tcpflow
 termshark
@@ -224,6 +232,7 @@ tesseract
 tesseract-data-eng
 texlive-most
 the_silver_searcher
+tidy
 tig
 tmux
 torbrowser-launcher
@@ -256,10 +265,10 @@ xdo
 xdotool
 xmlstarlet
 xterm
-yaml-language-server
 yt-dlp
 zaproxy
 zathura
 zathura-pdf-mupdf
 zbar
 zeek
+zoxide

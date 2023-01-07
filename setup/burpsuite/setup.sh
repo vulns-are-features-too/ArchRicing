@@ -8,7 +8,7 @@ mkdir $path_to_tools/burpsuite
 cd $path_to_tools/burpsuite
 
 echo "Setting up Jython"
-wget $(curl -s https://www.jython.org/download.html | grep "jython-standalone-.*\.jar" | cut -d'"' -f2)
+wget "$(curl -s https://www.jython.org/download.html | grep "jython-standalone-.*\.jar" | cut -d'"' -f2)"
 mv jython-standalone-*.jar ~/.BurpSuite
 
 echo "Installing bugcrowd's HUNT"

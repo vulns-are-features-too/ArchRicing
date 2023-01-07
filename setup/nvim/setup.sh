@@ -11,20 +11,10 @@ mv nvim.appimage ~/.local/bin/nvim
 chmod +x ~/.local/bin/nvim
 
 # Install packer
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
-  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
-# Install all the plugins
-~/.local/bin/nvim --cmd ":source $path_to_vim/init.vim" \
-	-c ":PlugInstall" \
-	-c ":qa!" 2>/dev/null
-
-# tree-sitter, Vimspector
-~/.local/bin/nvim --cmd ":source $path_to_vim/init.vim" \
-  -c ":TSInstall bash c cpp html java javascript json php python regex rust" \
-	-c ":qa!" 2>/dev/null
+# git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+#   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # sym-link vim to nvim
-ln -sf ~/.local/bin/nvim ~/.local/bin/vim
+# ln -sf ~/.local/bin/nvim ~/.local/bin/vim
 
 echo -e "[DONE] Installing and setting up stuff for nvim" | tee -a "$log_file"

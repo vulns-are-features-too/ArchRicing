@@ -1,4 +1,6 @@
 #!/bin/bash
+
+set -e
 source ../../var.sh
 
 echo "[START] Setting up mount" | tee -a "$log_file"
