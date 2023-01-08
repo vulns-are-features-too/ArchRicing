@@ -4,10 +4,8 @@ apparmor
 bat
 bspwm
 btop
-clipmenu
 cmake
 cronie
-dmenu
 dunst
 firefox
 firefox-tridactyl
@@ -27,6 +25,7 @@ python-pipenv
 python-pipx
 python-requests
 rclone
+rofi
 rustup
 sxhkd
 sxiv
