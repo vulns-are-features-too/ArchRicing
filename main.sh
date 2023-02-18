@@ -197,10 +197,11 @@ post_install() {
   echo "updatedb"
   sudo updatedb
 
-  sudo systemctl enable NetworkManager
   sudo systemctl enable apparmor
+  sudo systemctl enable archlinux-keyring-wkd-sync.timer
   sudo systemctl enable bluetooth
   sudo systemctl enable cronie
+  sudo systemctl enable NetworkManager
   sudo systemctl disable NetworkManager-wait-online.service
   systemctl --user enable pueued.service
   #sudo systemctl enable powertop.service

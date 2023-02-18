@@ -74,6 +74,7 @@ hashid
 hashtag
 haskell-base-prelude
 hexedit
+hexyl
 highlight
 hostapd
 hostapd-wpe
@@ -234,7 +235,6 @@ tesseract-data-eng
 texlive-most
 the_silver_searcher
 tidy
-tig
 tmux
 torbrowser-launcher
 traceroute
@@ -243,7 +243,6 @@ trufflehog
 ttf-fira-mono
 ttf-font-awesome
 ttf-hanazono
-ttf-sazanami
 udisks2
 ufw
 unclutter
@@ -266,7 +265,6 @@ xdo
 xdotool
 xmlstarlet
 xterm
-yt-dlp
 zaproxy
 zathura
 zathura-pdf-mupdf
