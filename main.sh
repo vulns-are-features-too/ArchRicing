@@ -129,7 +129,7 @@ install_rust() {
   rustup default stable
 
   # Rust Language Server
-  rustup component add clippy docs fmt rust-analysis rust-src
+  rustup component add clippy rust-analysis rust-analyzer rust-docs rust-src rustfmt
 
   cargo install cargo-audit --features=fix
   cargo install cargo-update
@@ -181,7 +181,9 @@ misc() {
 
     # allow acpilight's xbacklight to control brightness without sudo
     sudo cp ./misc/backlight.rules /etc/udev/rules.d/
-    sudo usermod -aG video "$USER"
+    sudo cp /usr/share/ddcutil/data/90-nvidia-i2c.conf /etc/X11/xorg.conf.d/
+    sudo cp /usr/share/ddcutil/data/45-ddcutil-i2c.rules /usr/share/ddcutil/data/45-ddcutil-usb.rules
+    sudo usermod -aG i2c video "$USER"
   fi
 }
 
