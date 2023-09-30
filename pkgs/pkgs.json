@@ -61,7 +61,7 @@
  "enum4linux": { "src": "pacman", "type": "cli" },
  "eslint": { "src": "pacman", "type": "cli" },
  "evil-winrm": { "src": "pacman", "type": "cli" },
- "exa": { "src": "pacman", "type": "cli" },
+ "eza": { "src": "pacman", "type": "cli" },
  "exploitdb": { "src": "pacman", "type": "cli" },
  "eyed3": { "src": "pipx", "type": "cli" },
  "fd": { "src": "pacman", "type": "cli" },
