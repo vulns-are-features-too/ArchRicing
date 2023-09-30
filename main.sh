@@ -183,6 +183,8 @@ misc() {
     sudo cp ./misc/backlight.rules /etc/udev/rules.d/
     sudo cp /usr/share/ddcutil/data/90-nvidia-i2c.conf /etc/X11/xorg.conf.d/
     sudo cp /usr/share/ddcutil/data/45-ddcutil-i2c.rules /usr/share/ddcutil/data/45-ddcutil-usb.rules
+    # allow ddcutil to control brightness without sudo
+    sudo cp ./misc/i2c-dev.conf /etc/modules-load.d/i2c-dev.conf
     sudo usermod -aG i2c video "$USER"
   fi
 }
