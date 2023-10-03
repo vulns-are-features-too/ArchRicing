@@ -104,7 +104,6 @@ install_aur() {
 install_pip() {
   echo -e "[START] Installing python modules\n" | tee -a "$log_file"
 
-  pip3 install --user -r "$path_to_pkgs/pip" || exit 1
   while read -r line; do
     python3 -m pipx install "$line"
   done < "$path_to_pkgs/pipx"
@@ -146,15 +145,6 @@ install_go() {
   xargs -I pkg go install "pkg" < "$path_to_pkgs/go"
 
   echo -e "[DONE] Installing go tools\n" | tee -a "$log_file"
-}
-
-install_ruby() {
-  echo -e "[START] Installing ruby tools\n" | tee -a "$log_file"
-
-  readarray -t pkgs < "$path_to_pkgs/ruby"
-  gem install "${pkgs[@]}"
-
-  echo -e "[DONE] Installing ruby tools\n" | tee -a "$log_file"
 }
 
 setup() {
