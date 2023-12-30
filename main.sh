@@ -198,6 +198,8 @@ post_install() {
   sudo systemctl enable NetworkManager
   sudo systemctl disable NetworkManager-wait-online.service
   systemctl --user enable pueued.service
+  systemctl --user enable pipewire-pulse
+  systemctl --user enable wireplumber
   #sudo systemctl enable powertop.service
 
   if [ "$(systemd-detect-virt -q)" ]; then
