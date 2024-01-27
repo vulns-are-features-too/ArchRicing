@@ -84,7 +84,7 @@ install_pkg() {
   echo -e "[START] Installing with standard package manager\n" | tee -a "$log_file"
 
   files=("$path_to_pkgs/pacman")
-  systemd-detect-virt -q && files+=("$path_to_pkgs/pacman-guest") || files+=("$path_to_pkgs/pacman-guest")
+  systemd-detect-virt -q && files+=("$path_to_pkgs/pacman-guest") || files+=("$path_to_pkgs/pacman-host")
   cat "${files[@]}" | sudo pacman -S --needed --disable-download-timeout - || exit 1
 
   echo -e "[DONE] Installing with standard package manager\n" | tee -a "$log_file"
@@ -94,7 +94,7 @@ install_aur() {
   echo -e "[START] Installing stuff from the AUR\n" | tee -a "$log_file"
 
   files=("$path_to_pkgs/aur")
-  systemd-detect-virt -q || files+=("$path_to_pkgs/aur")
+  systemd-detect-virt -q || files+=("$path_to_pkgs/aur-host")
   readarray -t pkgs <<< "$(cat "${files[@]}")"
   yay -Sa --needed "${pkgs[@]}" || exit 1
 
