@@ -1,16 +1,30 @@
 #!/bin/bash
 set -e
 
-jq -r 'to_entries[] | select(.value.src == "pacman") | select(.value.is_min_required == true) | .key' < pkgs.json > pacman-min
-jq -r 'to_entries[] | select(.value.src == "pacman") | select(.value.is_host_only == true) | .key' < pkgs.json > pacman-host
-jq -r 'to_entries[] | select(.value.src == "pacman") | select(.value.is_guest_only == true) | .key' < pkgs.json > pacman-guest
-jq -r 'to_entries[] | select(.value.src == "pacman") | select(.value.is_min_required != true and .value.is_host_only != true and .value.is_guest_only != true) | .key' < pkgs.json > pacman
+filter() {
+  # Usage: filter src [outfile] [additional_filter]
+  src="$1"
+  if [ $# -eq 1 ]; then
+    file="$1"
+  else
+    file="$2"
+  fi
+  if [ $# -eq 3 ]; then
+    filter=" and select($3)"
+  fi
+  jq -r "to_entries[] | select(.value.src == \"$src\" $filter) | .key" < pkgs.json > "$file"
+}
 
-jq -r 'to_entries[] | select(.value.src == "aur") | select(.value.is_host_only == true) | .key' < pkgs.json > aur-host
-jq -r 'to_entries[] | select(.value.src == "aur") | select(.value.is_guest_only == true) | .key' < pkgs.json > aur-guest
-jq -r 'to_entries[] | select(.value.src == "aur") | select(.value.is_min_required != true and .value.is_host_only != true and .value.is_guest_only != true) | .key' < pkgs.json > aur
+filter pacman pacman-min ".value.is_min_required == true"
+filter pacman pacman-host ".value.is_host_only == true"
+filter pacman pacman-guest ".value.is_guest_only == true"
+filter pacman pacman ".value.is_min_required != true and .value.is_host_only != true and .value.is_guest_only != true"
 
-jq -r 'to_entries[] | select(.value.src == "pipx") | .key' < pkgs.json > pipx
-jq -r 'to_entries[] | select(.value.src == "npm") | .key' < pkgs.json > npm
-jq -r 'to_entries[] | select(.value.src == "rust") | .key' < pkgs.json > rust
-jq -r 'to_entries[] | select(.value.src == "go") | .key' < pkgs.json > go
+filter aur aur-host ".value.is_host_only == true"
+filter aur aur-guest ".value.is_guest_only == true"
+filter aur aur ".value.is_min_required != true and .value.is_host_only != true and .value.is_guest_only != true"
+
+filter pipx
+filter npm
+filter rust
+filter go
