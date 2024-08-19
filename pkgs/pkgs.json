@@ -276,6 +276,7 @@
  "yt-dlp": { "src": "pipx", "type": "cli" },
  "zaproxy": { "src": "pacman", "type": "gui" },
  "zathura": { "src": "pacman", "type": "gui" },
+ "zathura-cb": { "src": "pacman", "type": "gui" },
  "zathura-pdf-mupdf": { "src": "pacman", "type": "gui" },
  "zbar": { "src": "pacman", "type": "cli" },
  "zeek": { "src": "pacman", "type": "cli" },
