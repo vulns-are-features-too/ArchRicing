@@ -141,6 +141,7 @@ tmux
 torbrowser-launcher
 traceroute
 tree-sitter
+tree-sitter-cli
 ttf-fira-mono
 ttf-font-awesome
 ttf-hanazono
@@ -162,6 +163,7 @@ xdo
 xdotool
 zaproxy
 zathura
+zathura-cb
 zathura-pdf-mupdf
 zbar
 zeek
