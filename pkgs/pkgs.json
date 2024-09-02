@@ -156,7 +156,7 @@
  "openssh": { "src": "pacman", "type": "cli" },
  "p7zip": { "src": "pacman", "type": "cli" },
  "pacman-pkgfile-hook": { "src": "aur", "type": "lib" },
- "pandoc": { "src": "pacman", "type": "cli" },
+ "pandoc": { "is_host_only": true, "src": "pacman", "type": "cli" },
  "pavucontrol": { "is_host_only": true, "src": "pacman", "type": "gui" },
  "pcmanfm": { "src": "pacman", "type": "gui" },
  "perl-file-mimeinfo": { "src": "pacman", "type": "lib" },
