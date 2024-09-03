@@ -107,6 +107,7 @@
  "jwt-tool": { "src": "pacman", "type": "cli" },
  "jython": { "src": "pacman", "type": "lib" },
  "kerbrute": { "src": "pacman", "type": "cli" },
+ "lazygit": { "src": "pacman", "type": "tui" },
  "ldapdomaindump": { "src": "pacman", "type": "cli" },
  "ldeep": { "src": "pacman", "type": "cli" },
  "lesspipe": { "src": "pacman", "type": "cli" },
