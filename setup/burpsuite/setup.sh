@@ -4,13 +4,12 @@ set -e
 source ../../var.sh
 
 echo "[START] Setting up burpsuite" | tee -a "$log_file"
-mkdir $path_to_tools/burpsuite
-cd $path_to_tools/burpsuite
+burp_tools="$path_to_tools/burpsuite"
+mkdir -p "$burp_tools"
+cd "$burp_tools"
 
 echo "Setting up Jython"
-wget "$(curl -s https://www.jython.org/download.html | grep "jython-standalone-.*\.jar" | cut -d'"' -f2)"
-mkdir ~/.BurpSuite
-mv jython-standalone-*.jar ~/.BurpSuite/
+wget 'https://repo1.maven.org/maven2/org/python/jython-standalone/2.7.3/jython-standalone-2.7.3.jar'
 
 echo "Installing bugcrowd's HUNT"
 wget https://raw.githubusercontent.com/bugcrowd/HUNT/master/Burp/hunt_scanner.py
