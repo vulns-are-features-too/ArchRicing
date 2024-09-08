@@ -156,6 +156,7 @@
  "openocd": { "src": "pacman", "type": "cli" },
  "openssh": { "src": "pacman", "type": "cli" },
  "p7zip": { "src": "pacman", "type": "cli" },
+ "pacman-contrib": { "src": "pacman", "type": "cli" },
  "pacman-pkgfile-hook": { "src": "aur", "type": "lib" },
  "pandoc": { "is_host_only": true, "src": "pacman", "type": "cli" },
  "pavucontrol": { "is_host_only": true, "src": "pacman", "type": "gui" },

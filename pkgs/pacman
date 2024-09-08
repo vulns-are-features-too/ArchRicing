@@ -92,6 +92,7 @@ openldap
 openocd
 openssh
 p7zip
+pacman-contrib
 pcmanfm
 perl-file-mimeinfo
 perl-image-exiftool
