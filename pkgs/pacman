@@ -76,7 +76,7 @@ man-db
 man-pages
 metasploit
 mingw-w64-gcc
-mlocate
+plocate
 moreutils
 mp3info
 msf-mpc
