@@ -1,5 +1,9 @@
 arandr
 blueman
+bluez
+bluez-obex
+bluez-tools
+bluez-utils
 brightnessctl
 calcurse
 ddcutil
