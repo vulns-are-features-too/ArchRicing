@@ -20,6 +20,7 @@ mpv
 net-tools
 networkmanager
 npm
+nsxiv
 polybar
 python-pip
 python-pipenv
@@ -29,7 +30,6 @@ rclone
 rofi
 rustup
 sxhkd
-nsxiv
 unzip
 vi
 vifm

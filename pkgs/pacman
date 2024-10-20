@@ -12,7 +12,6 @@ burpsuite
 checksec
 choose
 chromium
-netexec
 ctags
 db
 difftastic
@@ -74,13 +73,13 @@ man-db
 man-pages
 metasploit
 mingw-w64-gcc
-plocate
 moreutils
 mp3info
 msf-mpc
 msfdb
 msfenum
 mypy
+netexec
 nfs-utils
 ngrep
 nmap
@@ -89,6 +88,7 @@ obsidian
 openldap
 openocd
 openssh
+otf-atkinson-hyperlegible
 p7zip
 pacman-contrib
 pcmanfm
@@ -101,6 +101,7 @@ pipewire-alsa
 pipewire-jack
 pipewire-pulse
 pkgfile
+plocate
 prettier
 proxychains-ng
 pueue
