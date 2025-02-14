@@ -4,7 +4,6 @@ https://github.com/InteliSecureLabs/Linux_Exploit_Suggester
 https://github.com/PowerShellMafia/PowerSploit
 https://github.com/danielmiessler/SecLists
 https://github.com/grongor/knock
-https://github.com/marlonrichert/zsh-autocomplete
 https://github.com/pimps/ysoserial-modified
 https://github.com/rebootuser/LinEnum
 https://github.com/samratashok/nishang
