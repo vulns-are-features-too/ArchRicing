@@ -196,7 +196,6 @@
  "radare2": { "is_guest_only": true, "src": "pacman", "type": "cli" },
  "rclone": { "is_host_only": true, "is_min_required": true, "src": "pacman", "type": "cli" },
  "responder": { "src": "pacman", "type": "cli" },
- "ripdrag": { "src": "rust", "type": "gui" },
  "ripgrep": { "src": "pacman", "type": "cli" },
  "rlwrap": { "src": "pacman", "type": "cli" },
  "rofi": { "is_min_required": true, "src": "pacman", "type": "gui" },
