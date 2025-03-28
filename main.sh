@@ -200,7 +200,6 @@ post_install() {
   systemctl --user enable pueued.service
   systemctl --user enable pipewire-pulse
   systemctl --user enable wireplumber
-  systemctl --user enable greenclip.service
   #sudo systemctl enable powertop.service
 
   if [ "$(systemd-detect-virt -q)" ]; then
