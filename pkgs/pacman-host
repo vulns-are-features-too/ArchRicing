@@ -33,7 +33,6 @@ syslog-ng
 texlive
 transmission-cli
 usbguard
-vagrant
 virtualbox
 virtualbox-guest-iso
 xss-lock

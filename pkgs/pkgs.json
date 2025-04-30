@@ -247,7 +247,6 @@
  "unzip": { "is_min_required": true, "src": "pacman", "type": "cli" },
  "urlscan": { "src": "pacman", "type": "cli" },
  "usbguard": { "is_host_only": true, "src": "pacman", "type": "cli" },
- "vagrant": { "is_host_only": true, "src": "pacman", "type": "cli" },
  "valgrind": { "src": "pacman", "type": "cli" },
  "vi": { "is_min_required": true, "src": "pacman", "type": "tui" },
  "vifm": { "is_min_required": true, "src": "pacman", "type": "tui" },
