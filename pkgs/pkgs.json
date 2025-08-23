@@ -191,7 +191,6 @@
  "python-pynvim": { "src": "pacman", "type": "cli" },
  "python-requests": { "is_min_required": true, "src": "pacman", "type": "cli" },
  "python-unidecode": { "src": "pacman", "type": "cli" },
- "pytype": { "src": "pipx", "type": "cli" },
  "qmk": { "is_host_only": true, "src": "pacman", "type": "cli" },
  "radare2": { "is_guest_only": true, "src": "pacman", "type": "cli" },
  "rclone": { "is_host_only": true, "is_min_required": true, "src": "pacman", "type": "cli" },
