@@ -130,7 +130,6 @@
  "metasploit": { "src": "pacman", "type": "cli" },
  "mingw-w64-gcc": { "src": "pacman", "type": "cli" },
  "moreutils": { "src": "pacman", "type": "cli" },
- "mp3info": { "src": "pacman", "type": "cli" },
  "mpc": { "is_host_only": true, "is_min_required": true, "src": "pacman", "type": "cli" },
  "mpd": { "is_host_only": true, "is_min_required": true, "src": "pacman", "type": "cli" },
  "mpv": { "is_min_required": true, "src": "pacman", "type": "gui" },
