@@ -225,7 +225,7 @@
  "termshark": { "src": "pacman", "type": "tui" },
  "tesseract": { "src": "pacman", "type": "cli" },
  "tesseract-data-eng": { "src": "pacman", "type": "cli" },
- "texlive": { "is_host_only": true, "src": "pacman", "type": "cli" },
+ "tectonic": { "is_host_only": true, "src": "pacman", "type": "cli" },
  "the_silver_searcher": { "src": "pacman", "type": "cli" },
  "tidy": { "src": "pacman", "type": "cli" },
  "tmux": { "src": "pacman", "type": "tui" },
