@@ -33,22 +33,22 @@ add_repos() {
   sudo pacman -S --noconfirm blackman
   echo -e "Finished adding Blacharch repository\n" | tee -a "$log_file"
 
-  # Archstrike
-  echo -e "Adding Archstrike repository\n" | tee -a "$log_file"
-  echo -e "\n[archstrike]\nServer = https://mirror.archstrike.org/\$arch/\$repo\n" | sudo tee -a /etc/pacman.conf
-  signature="9D5F1C051D146843CDA4858BDE64825E7CBC0D51"
-  #signature=$(curl -s 'https://archstrike.org/wiki/setup' | grep -oP 'pacman-key --lsign-key [A-Z0-9]+' | cut -d' ' -f3 | head -1)
-  sudo pacman-key --init
-  sudo dirmngr < /dev/null
-  wget https://archstrike.org/keyfile.asc
-  sudo pacman-key --add keyfile.asc
-  rm keyfile.asc
-  sudo pacman -Sy
-  sudo pacman-key --lsign-key "$signature"
-  sudo pacman -S archstrike-keyring archstrike-mirrorlist
-  sudo sed -i 's|Server = https://mirror.archstrike.org/$arch/$repo|Include = /etc/pacman.d/archstrike-mirrorlist|' /etc/pacman.conf
-  sudo pacman -Syy --noconfirm
-  echo -e "Finished adding Archstrike repository\n" | tee -a "$log_file"
+  # # Archstrike
+  # echo -e "Adding Archstrike repository\n" | tee -a "$log_file"
+  # echo -e "\n[archstrike]\nServer = https://mirror.archstrike.org/\$arch/\$repo\n" | sudo tee -a /etc/pacman.conf
+  # signature="9D5F1C051D146843CDA4858BDE64825E7CBC0D51"
+  # #signature=$(curl -s 'https://archstrike.org/wiki/setup' | grep -oP 'pacman-key --lsign-key [A-Z0-9]+' | cut -d' ' -f3 | head -1)
+  # sudo pacman-key --init
+  # sudo dirmngr < /dev/null
+  # wget https://archstrike.org/keyfile.asc
+  # sudo pacman-key --add keyfile.asc
+  # rm keyfile.asc
+  # sudo pacman -Sy
+  # sudo pacman-key --lsign-key "$signature"
+  # sudo pacman -S archstrike-keyring archstrike-mirrorlist
+  # sudo sed -i 's|Server = https://mirror.archstrike.org/$arch/$repo|Include = /etc/pacman.d/archstrike-mirrorlist|' /etc/pacman.conf
+  # sudo pacman -Syy --noconfirm
+  # echo -e "Finished adding Archstrike repository\n" | tee -a "$log_file"
 
   echo -e "[DONE] Installing repositories\n" | tee -a "$log_file"
 }
