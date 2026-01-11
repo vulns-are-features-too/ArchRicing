@@ -23,7 +23,6 @@
  "bluez-tools": { "is_host_only": true, "src": "pacman", "type": "cli" },
  "bluez-utils": { "is_host_only": true, "src": "pacman", "type": "cli" },
  "bpython": { "src": "pacman", "type": "cli" },
- "bridge-utils": { "src": "pacman", "type": "cli" },
  "brightnessctl": { "is_host_only": true, "is_min_required": true, "src": "pacman", "type": "cli" },
  "broot": { "src": "pacman", "type": "cli" },
  "bspwm": { "is_min_required": true, "src": "pacman", "type": "gui" },

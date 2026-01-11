@@ -6,7 +6,6 @@ bat-extras
 bind
 binwalk
 bpython
-bridge-utils
 broot
 burpsuite
 checksec
