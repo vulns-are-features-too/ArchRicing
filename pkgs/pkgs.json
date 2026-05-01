@@ -40,7 +40,6 @@
  "ddcutil": { "is_host_only": true, "src": "pacman", "type": "lib" },
  "deno": { "src": "pacman", "type": "cli" },
  "difftastic": { "src": "pacman", "type": "cli" },
- "discord": { "is_host_only": true, "src": "pacman", "type": "gui" },
  "dmidecode": { "is_host_only": true, "src": "pacman", "type": "other" },
  "docker": { "src": "pacman", "type": "cli" },
  "docker-compose": { "src": "pacman", "type": "cli" },
