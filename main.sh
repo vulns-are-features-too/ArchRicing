@@ -117,6 +117,9 @@ install_npm() {
   # Setup npm to be used without sudo
   npm config set prefix ~/.npm
   export PATH="$PATH:$HOME/.npm/bin"
+
+  npm config set min-release-age 7
+
   xargs npm install -g < "$path_to_pkgs/npm" || exit 1
 
   echo -e "[DONE] Installing npm tools\n" | tee -a "$log_file"
@@ -132,6 +135,7 @@ install_rust() {
 
   cargo install cargo-audit --features=fix
   cargo install cargo-update
+  cat ./misc/cargo.config.toml >> ~/.cargo/config.toml
 
   xargs cargo install < "$path_to_pkgs/rust"
 
