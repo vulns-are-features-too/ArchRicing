@@ -50,7 +50,7 @@
  "eslint": { "src": "pacman", "type": "cli" },
  "evil-winrm": { "src": "pacman", "type": "cli" },
  "exploitdb": { "src": "pacman", "type": "cli" },
- "eyed3": { "src": "pipx", "type": "cli" },
+ "eyed3": { "src": "pip", "type": "cli" },
  "eza": { "src": "pacman", "type": "cli" },
  "fd": { "src": "pacman", "type": "cli" },
  "feroxbuster": { "src": "pacman", "type": "cli" },
